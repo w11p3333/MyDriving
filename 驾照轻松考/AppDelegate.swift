@@ -7,16 +7,77 @@
 //
 
 import UIKit
+import KGFloatingDrawer
 
+let bgcolor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var _drawerViewController: KGDrawerViewController?
+    
+    var drawerViewController: KGDrawerViewController {
+        get {
+            if let viewController = _drawerViewController {
+                return viewController
+            }
+            
+            return prepareDrawerViewController()
+        }
+    }
+    
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = drawerViewController
+        window?.makeKeyAndVisible()
+        setupUI()
         // Override point for customization after application launch.
         return true
+    }
+    
+    
+    func  setupUI()
+    {
+        
+        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
+        
+        UINavigationBar.appearance().titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
+        
+        //返回键颜色
+        UINavigationBar.appearance().barStyle = UIBarStyle.Default
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        //背景颜色
+        UINavigationBar.appearance().barTintColor = bgcolor
+        
+       
+        
+
+    }
+    
+    func prepareDrawerViewController() ->     KGDrawerViewController {
+        let drawerViewController = KGDrawerViewController()
+        drawerViewController.centerViewController = UINavigationController(rootViewController: viewControllerForStoryboardId("HomeViewController"))
+        
+        drawerViewController.leftViewController = viewControllerForStoryboardId("LeftMenuViewController")
+        
+        drawerViewController.leftDrawerWidth = CGFloat(150)
+        //背景图片
+        _drawerViewController = drawerViewController
+        return drawerViewController
+    }
+    
+    
+    private func drawerStoryboard() -> UIStoryboard {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard
+    }
+    
+    private func viewControllerForStoryboardId(storyboardId: String) -> UIViewController {
+        let viewController: UIViewController = drawerStoryboard().instantiateViewControllerWithIdentifier(storyboardId) as! UIViewController
+        return viewController
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6541E8F2CA07C62886A7C4E2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6026C0A486E4E17BD842665F /* Pods.framework */; };
 		B2E41F531CC29A4F006C541F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F521CC29A4F006C541F /* AppDelegate.swift */; };
-		B2E41F551CC29A4F006C541F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F541CC29A4F006C541F /* ViewController.swift */; };
 		B2E41F581CC29A4F006C541F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E41F561CC29A4F006C541F /* Main.storyboard */; };
 		B2E41F5A1CC29A4F006C541F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E41F591CC29A4F006C541F /* Assets.xcassets */; };
 		B2E41F5D1CC29A4F006C541F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E41F5B1CC29A4F006C541F /* LaunchScreen.storyboard */; };
 		B2E41F681CC29A4F006C541F /* _____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F671CC29A4F006C541F /* _____Tests.swift */; };
 		B2E41F731CC29A4F006C541F /* _____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F721CC29A4F006C541F /* _____UITests.swift */; };
+		B2E41F811CC29B2D006C541F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F801CC29B2D006C541F /* HomeViewController.swift */; };
+		B2E41F831CC29B59006C541F /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F821CC29B59006C541F /* LeftMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30863A58341ECFE735A986A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6026C0A486E4E17BD842665F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E41F4F1CC29A4F006C541F /* 驾照轻松考.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "驾照轻松考.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E41F521CC29A4F006C541F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B2E41F541CC29A4F006C541F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B2E41F571CC29A4F006C541F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2E41F591CC29A4F006C541F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2E41F5C1CC29A4F006C541F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		B2E41F6E1CC29A4F006C541F /* 驾照轻松考UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "驾照轻松考UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E41F721CC29A4F006C541F /* _____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_____UITests.swift"; sourceTree = "<group>"; };
 		B2E41F741CC29A4F006C541F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E41F801CC29B2D006C541F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B2E41F821CC29B59006C541F /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		EBE24CE784EF51AE17B64BAA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6541E8F2CA07C62886A7C4E2 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,8 @@
 				B2E41F661CC29A4F006C541F /* 驾照轻松考Tests */,
 				B2E41F711CC29A4F006C541F /* 驾照轻松考UITests */,
 				B2E41F501CC29A4F006C541F /* Products */,
+				F8583823D824DFED8DA99387 /* Pods */,
+				F44F629A6313470555909949 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				B2E41F521CC29A4F006C541F /* AppDelegate.swift */,
-				B2E41F541CC29A4F006C541F /* ViewController.swift */,
 				B2E41F561CC29A4F006C541F /* Main.storyboard */,
 				B2E41F591CC29A4F006C541F /* Assets.xcassets */,
 				B2E41F5B1CC29A4F006C541F /* LaunchScreen.storyboard */,
 				B2E41F5E1CC29A4F006C541F /* Info.plist */,
+				B2E41F801CC29B2D006C541F /* HomeViewController.swift */,
+				B2E41F821CC29B59006C541F /* LeftMenuViewController.swift */,
 			);
 			path = "驾照轻松考";
 			sourceTree = "<group>";
@@ -125,6 +135,23 @@
 			path = "驾照轻松考UITests";
 			sourceTree = "<group>";
 		};
+		F44F629A6313470555909949 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6026C0A486E4E17BD842665F /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8583823D824DFED8DA99387 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBE24CE784EF51AE17B64BAA /* Pods.debug.xcconfig */,
+				30863A58341ECFE735A986A6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2E41F771CC29A4F006C541F /* Build configuration list for PBXNativeTarget "驾照轻松考" */;
 			buildPhases = (
+				7FDD7DC8693029399C9A76AF /* Check Pods Manifest.lock */,
 				B2E41F4B1CC29A4F006C541F /* Sources */,
 				B2E41F4C1CC29A4F006C541F /* Frameworks */,
 				B2E41F4D1CC29A4F006C541F /* Resources */,
+				28CA6F2A258F8393BA5ECA9C /* Embed Pods Frameworks */,
+				6B397DB9BC644CA265E81858 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,13 +284,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		28CA6F2A258F8393BA5ECA9C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B397DB9BC644CA265E81858 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FDD7DC8693029399C9A76AF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B2E41F4B1CC29A4F006C541F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2E41F551CC29A4F006C541F /* ViewController.swift in Sources */,
 				B2E41F531CC29A4F006C541F /* AppDelegate.swift in Sources */,
+				B2E41F811CC29B2D006C541F /* HomeViewController.swift in Sources */,
+				B2E41F831CC29B59006C541F /* LeftMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +481,7 @@
 		};
 		B2E41F781CC29A4F006C541F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBE24CE784EF51AE17B64BAA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "驾照轻松考/Info.plist";
@@ -413,6 +493,7 @@
 		};
 		B2E41F791CC29A4F006C541F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30863A58341ECFE735A986A6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "驾照轻松考/Info.plist";
@@ -487,6 +568,7 @@
 				B2E41F791CC29A4F006C541F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2E41F7A1CC29A4F006C541F /* Build configuration list for PBXNativeTarget "驾照轻松考Tests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +577,7 @@
 				B2E41F7C1CC29A4F006C541F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2E41F7D1CC29A4F006C541F /* Build configuration list for PBXNativeTarget "驾照轻松考UITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +586,7 @@
 				B2E41F7F1CC29A4F006C541F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
