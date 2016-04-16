@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2E41F531CC29A4F006C541F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F521CC29A4F006C541F /* AppDelegate.swift */; };
+		B2E41F551CC29A4F006C541F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F541CC29A4F006C541F /* ViewController.swift */; };
+		B2E41F581CC29A4F006C541F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E41F561CC29A4F006C541F /* Main.storyboard */; };
+		B2E41F5A1CC29A4F006C541F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E41F591CC29A4F006C541F /* Assets.xcassets */; };
+		B2E41F5D1CC29A4F006C541F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E41F5B1CC29A4F006C541F /* LaunchScreen.storyboard */; };
+		B2E41F681CC29A4F006C541F /* _____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F671CC29A4F006C541F /* _____Tests.swift */; };
+		B2E41F731CC29A4F006C541F /* _____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F721CC29A4F006C541F /* _____UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2E41F641CC29A4F006C541F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E41F471CC29A4F006C541F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2E41F4E1CC29A4F006C541F;
+			remoteInfo = "驾照轻松考";
+		};
+		B2E41F6F1CC29A4F006C541F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E41F471CC29A4F006C541F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2E41F4E1CC29A4F006C541F;
+			remoteInfo = "驾照轻松考";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B2E41F4F1CC29A4F006C541F /* 驾照轻松考.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "驾照轻松考.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E41F521CC29A4F006C541F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B2E41F541CC29A4F006C541F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B2E41F571CC29A4F006C541F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2E41F591CC29A4F006C541F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B2E41F5C1CC29A4F006C541F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2E41F5E1CC29A4F006C541F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E41F631CC29A4F006C541F /* 驾照轻松考Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "驾照轻松考Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E41F671CC29A4F006C541F /* _____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_____Tests.swift"; sourceTree = "<group>"; };
+		B2E41F691CC29A4F006C541F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E41F6E1CC29A4F006C541F /* 驾照轻松考UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "驾照轻松考UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E41F721CC29A4F006C541F /* _____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_____UITests.swift"; sourceTree = "<group>"; };
+		B2E41F741CC29A4F006C541F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2E41F4C1CC29A4F006C541F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E41F601CC29A4F006C541F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E41F6B1CC29A4F006C541F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2E41F461CC29A4F006C541F = {
+			isa = PBXGroup;
+			children = (
+				B2E41F511CC29A4F006C541F /* 驾照轻松考 */,
+				B2E41F661CC29A4F006C541F /* 驾照轻松考Tests */,
+				B2E41F711CC29A4F006C541F /* 驾照轻松考UITests */,
+				B2E41F501CC29A4F006C541F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B2E41F501CC29A4F006C541F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2E41F4F1CC29A4F006C541F /* 驾照轻松考.app */,
+				B2E41F631CC29A4F006C541F /* 驾照轻松考Tests.xctest */,
+				B2E41F6E1CC29A4F006C541F /* 驾照轻松考UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2E41F511CC29A4F006C541F /* 驾照轻松考 */ = {
+			isa = PBXGroup;
+			children = (
+				B2E41F521CC29A4F006C541F /* AppDelegate.swift */,
+				B2E41F541CC29A4F006C541F /* ViewController.swift */,
+				B2E41F561CC29A4F006C541F /* Main.storyboard */,
+				B2E41F591CC29A4F006C541F /* Assets.xcassets */,
+				B2E41F5B1CC29A4F006C541F /* LaunchScreen.storyboard */,
+				B2E41F5E1CC29A4F006C541F /* Info.plist */,
+			);
+			path = "驾照轻松考";
+			sourceTree = "<group>";
+		};
+		B2E41F661CC29A4F006C541F /* 驾照轻松考Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B2E41F671CC29A4F006C541F /* _____Tests.swift */,
+				B2E41F691CC29A4F006C541F /* Info.plist */,
+			);
+			path = "驾照轻松考Tests";
+			sourceTree = "<group>";
+		};
+		B2E41F711CC29A4F006C541F /* 驾照轻松考UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B2E41F721CC29A4F006C541F /* _____UITests.swift */,
+				B2E41F741CC29A4F006C541F /* Info.plist */,
+			);
+			path = "驾照轻松考UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2E41F4E1CC29A4F006C541F /* 驾照轻松考 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E41F771CC29A4F006C541F /* Build configuration list for PBXNativeTarget "驾照轻松考" */;
+			buildPhases = (
+				B2E41F4B1CC29A4F006C541F /* Sources */,
+				B2E41F4C1CC29A4F006C541F /* Frameworks */,
+				B2E41F4D1CC29A4F006C541F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "驾照轻松考";
+			productName = "驾照轻松考";
+			productReference = B2E41F4F1CC29A4F006C541F /* 驾照轻松考.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B2E41F621CC29A4F006C541F /* 驾照轻松考Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E41F7A1CC29A4F006C541F /* Build configuration list for PBXNativeTarget "驾照轻松考Tests" */;
+			buildPhases = (
+				B2E41F5F1CC29A4F006C541F /* Sources */,
+				B2E41F601CC29A4F006C541F /* Frameworks */,
+				B2E41F611CC29A4F006C541F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2E41F651CC29A4F006C541F /* PBXTargetDependency */,
+			);
+			name = "驾照轻松考Tests";
+			productName = "驾照轻松考Tests";
+			productReference = B2E41F631CC29A4F006C541F /* 驾照轻松考Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B2E41F6D1CC29A4F006C541F /* 驾照轻松考UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E41F7D1CC29A4F006C541F /* Build configuration list for PBXNativeTarget "驾照轻松考UITests" */;
+			buildPhases = (
+				B2E41F6A1CC29A4F006C541F /* Sources */,
+				B2E41F6B1CC29A4F006C541F /* Frameworks */,
+				B2E41F6C1CC29A4F006C541F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2E41F701CC29A4F006C541F /* PBXTargetDependency */,
+			);
+			name = "驾照轻松考UITests";
+			productName = "驾照轻松考UITests";
+			productReference = B2E41F6E1CC29A4F006C541F /* 驾照轻松考UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2E41F471CC29A4F006C541F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "卢良潇";
+				TargetAttributes = {
+					B2E41F4E1CC29A4F006C541F = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = HQJ5Y44Q9H;
+					};
+					B2E41F621CC29A4F006C541F = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = HQJ5Y44Q9H;
+						TestTargetID = B2E41F4E1CC29A4F006C541F;
+					};
+					B2E41F6D1CC29A4F006C541F = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = HQJ5Y44Q9H;
+						TestTargetID = B2E41F4E1CC29A4F006C541F;
+					};
+				};
+			};
+			buildConfigurationList = B2E41F4A1CC29A4F006C541F /* Build configuration list for PBXProject "驾照轻松考" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2E41F461CC29A4F006C541F;
+			productRefGroup = B2E41F501CC29A4F006C541F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2E41F4E1CC29A4F006C541F /* 驾照轻松考 */,
+				B2E41F621CC29A4F006C541F /* 驾照轻松考Tests */,
+				B2E41F6D1CC29A4F006C541F /* 驾照轻松考UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2E41F4D1CC29A4F006C541F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E41F5D1CC29A4F006C541F /* LaunchScreen.storyboard in Resources */,
+				B2E41F5A1CC29A4F006C541F /* Assets.xcassets in Resources */,
+				B2E41F581CC29A4F006C541F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E41F611CC29A4F006C541F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E41F6C1CC29A4F006C541F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2E41F4B1CC29A4F006C541F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E41F551CC29A4F006C541F /* ViewController.swift in Sources */,
+				B2E41F531CC29A4F006C541F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E41F5F1CC29A4F006C541F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E41F681CC29A4F006C541F /* _____Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E41F6A1CC29A4F006C541F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E41F731CC29A4F006C541F /* _____UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2E41F651CC29A4F006C541F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2E41F4E1CC29A4F006C541F /* 驾照轻松考 */;
+			targetProxy = B2E41F641CC29A4F006C541F /* PBXContainerItemProxy */;
+		};
+		B2E41F701CC29A4F006C541F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2E41F4E1CC29A4F006C541F /* 驾照轻松考 */;
+			targetProxy = B2E41F6F1CC29A4F006C541F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B2E41F561CC29A4F006C541F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2E41F571CC29A4F006C541F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B2E41F5B1CC29A4F006C541F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2E41F5C1CC29A4F006C541F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2E41F751CC29A4F006C541F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2E41F761CC29A4F006C541F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2E41F781CC29A4F006C541F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "驾照轻松考/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B2E41F791CC29A4F006C541F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "驾照轻松考/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B2E41F7B1CC29A4F006C541F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "驾照轻松考Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/驾照轻松考.app/驾照轻松考";
+			};
+			name = Debug;
+		};
+		B2E41F7C1CC29A4F006C541F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "驾照轻松考Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/驾照轻松考.app/驾照轻松考";
+			};
+			name = Release;
+		};
+		B2E41F7E1CC29A4F006C541F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "驾照轻松考UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "驾照轻松考";
+			};
+			name = Debug;
+		};
+		B2E41F7F1CC29A4F006C541F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "驾照轻松考UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "驾照轻松考";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2E41F4A1CC29A4F006C541F /* Build configuration list for PBXProject "驾照轻松考" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E41F751CC29A4F006C541F /* Debug */,
+				B2E41F761CC29A4F006C541F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2E41F771CC29A4F006C541F /* Build configuration list for PBXNativeTarget "驾照轻松考" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E41F781CC29A4F006C541F /* Debug */,
+				B2E41F791CC29A4F006C541F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B2E41F7A1CC29A4F006C541F /* Build configuration list for PBXNativeTarget "驾照轻松考Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E41F7B1CC29A4F006C541F /* Debug */,
+				B2E41F7C1CC29A4F006C541F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B2E41F7D1CC29A4F006C541F /* Build configuration list for PBXNativeTarget "驾照轻松考UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E41F7E1CC29A4F006C541F /* Debug */,
+				B2E41F7F1CC29A4F006C541F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2E41F471CC29A4F006C541F /* Project object */;
+}
