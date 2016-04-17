@@ -8,8 +8,10 @@
 
 import UIKit
 import KGFloatingDrawer
+import FMDB
 
 let bgcolor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -35,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupUI()
         // Override point for customization after application launch.
         return true
+        
     }
     
     

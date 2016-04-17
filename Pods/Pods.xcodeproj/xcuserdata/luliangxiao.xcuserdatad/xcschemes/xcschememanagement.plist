@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KGFloatingDrawer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3D3434D5FDD47AF28B912EF60202BA84</key>
+		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52F4C78FD59ED28DB98214A77045D1A6</key>
+		<key>3876C178B4103E81DFE2A9BDFA5AEE32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7072BCF419C8E5C1569F684F0E7803FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EA6B8A640D64A6F1E25433C77D2AA14C</key>
+		<key>9F24F60C7E2B81338F4C329264DE8F93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EE408B750FA320758198886986BB74E4</key>
+		<key>BE5C94968BDE499468C36C3F20B267BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
