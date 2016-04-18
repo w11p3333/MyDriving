@@ -23,7 +23,7 @@ class AnswerManager: NSObject {
      var array = [AnyObject]()
      let answerStr = str as NSString
      let arr = answerStr.componentsSeparatedByString("<BR>") as [NSString]
-        print(arr)
+        
      array.append(arr[0])
      for i in 0...3
      {

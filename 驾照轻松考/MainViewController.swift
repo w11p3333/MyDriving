@@ -35,6 +35,9 @@ class MainViewController: YZDisplayViewController {
         
         titleHeight = 38
         
+        startR = 170 / 255
+        startG = 170 / 255
+        startB = 170 / 255
         
         endR = 32 / 255.0
         endG = 142 / 255.0
