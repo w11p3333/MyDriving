@@ -17,12 +17,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "轻松考驾照"
-        self.view.backgroundColor = UIColor(white: 0.95, alpha: 0.9)
-        //后期改成image
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "菜单", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(HomeViewController.LeftMenuClick))
+   
+        self.view.backgroundColor = UIColor(white: 0.99, alpha: 0.95)
+
         self.startBtn.clipsToBounds = true
-        self.startBtn.layer.cornerRadius = 50
+        self.startBtn.layer.cornerRadius = 40
         //设置轮播
         let scrollImageData = ["scroll1","scroll2","scroll3"]
         cycleScrollView.imageURLStringsGroup = scrollImageData
@@ -35,14 +34,6 @@ class HomeViewController: UIViewController {
     }
     
    
-    func LeftMenuClick()
-    {
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.drawerViewController.toggleDrawer(KGDrawerSide.Left, animated: true) { (finished) -> Void  in
-            
-        }
-    }
-
+  
  
 }

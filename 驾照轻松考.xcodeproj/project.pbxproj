@@ -15,6 +15,21 @@
 		B2D43F301CC3D186003519EC /* SubChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F2F1CC3D186003519EC /* SubChapter.swift */; };
 		B2D43F321CC3DA5F003519EC /* data.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B2D43F311CC3D82F003519EC /* data.sqlite */; };
 		B2D43F341CC3E46F003519EC /* ChooseChapterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F331CC3E46F003519EC /* ChooseChapterTableViewController.swift */; };
+		B2D43F361CC46CB4003519EC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F351CC46CB4003519EC /* UIColor+Extension.swift */; };
+		B2D43F381CC46E5B003519EC /* ChooseChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F371CC46E5B003519EC /* ChooseChapterTableViewCell.swift */; };
+		B2D43F3A1CC4768A003519EC /* TestScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F391CC4768A003519EC /* TestScrollView.swift */; };
+		B2D43F3D1CC489AF003519EC /* UIChooseAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F3B1CC489AF003519EC /* UIChooseAnswerTableViewCell.swift */; };
+		B2D43F3E1CC489AF003519EC /* UIChooseAnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D43F3C1CC489AF003519EC /* UIChooseAnswerTableViewCell.xib */; };
+		B2D43F401CC4959C003519EC /* AnswerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F3F1CC4959C003519EC /* AnswerManager.swift */; };
+		B2D43F421CC4A2EA003519EC /* MainTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F411CC4A2EA003519EC /* MainTestViewController.swift */; };
+		B2D43F5B1CC4D96F003519EC /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F531CC4D96F003519EC /* UIView+Frame.m */; };
+		B2D43F5C1CC4D96F003519EC /* YZDisplayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F551CC4D96F003519EC /* YZDisplayTitleLabel.m */; };
+		B2D43F5D1CC4D96F003519EC /* YZDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F571CC4D96F003519EC /* YZDisplayViewController.m */; };
+		B2D43F5E1CC4D96F003519EC /* YZFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F5A1CC4D96F003519EC /* YZFlowLayout.m */; };
+		B2D43F601CC4D9B6003519EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F5F1CC4D9B6003519EC /* MainViewController.swift */; };
+		B2D43F661CC4DB40003519EC /* SubjectTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F651CC4DB40003519EC /* SubjectTwoViewController.swift */; };
+		B2D43F681CC4DB4D003519EC /* SubjectThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F671CC4DB4D003519EC /* SubjectThreeViewController.swift */; };
+		B2D43F6A1CC4DB56003519EC /* MyChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F691CC4DB56003519EC /* MyChartsViewController.swift */; };
 		B2E41F531CC29A4F006C541F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F521CC29A4F006C541F /* AppDelegate.swift */; };
 		B2E41F581CC29A4F006C541F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E41F561CC29A4F006C541F /* Main.storyboard */; };
 		B2E41F5A1CC29A4F006C541F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E41F591CC29A4F006C541F /* Assets.xcassets */; };
@@ -52,6 +67,27 @@
 		B2D43F2F1CC3D186003519EC /* SubChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubChapter.swift; sourceTree = "<group>"; };
 		B2D43F311CC3D82F003519EC /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.sqlite; sourceTree = "<group>"; };
 		B2D43F331CC3E46F003519EC /* ChooseChapterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChapterTableViewController.swift; sourceTree = "<group>"; };
+		B2D43F351CC46CB4003519EC /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B2D43F371CC46E5B003519EC /* ChooseChapterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChapterTableViewCell.swift; sourceTree = "<group>"; };
+		B2D43F391CC4768A003519EC /* TestScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScrollView.swift; sourceTree = "<group>"; };
+		B2D43F3B1CC489AF003519EC /* UIChooseAnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIChooseAnswerTableViewCell.swift; sourceTree = "<group>"; };
+		B2D43F3C1CC489AF003519EC /* UIChooseAnswerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIChooseAnswerTableViewCell.xib; sourceTree = "<group>"; };
+		B2D43F3F1CC4959C003519EC /* AnswerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerManager.swift; sourceTree = "<group>"; };
+		B2D43F411CC4A2EA003519EC /* MainTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTestViewController.swift; sourceTree = "<group>"; };
+		B2D43F4C1CC4D717003519EC /* Swift-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridge.h"; sourceTree = "<group>"; };
+		B2D43F521CC4D96F003519EC /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		B2D43F531CC4D96F003519EC /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		B2D43F541CC4D96F003519EC /* YZDisplayTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayTitleLabel.h; sourceTree = "<group>"; };
+		B2D43F551CC4D96F003519EC /* YZDisplayTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayTitleLabel.m; sourceTree = "<group>"; };
+		B2D43F561CC4D96F003519EC /* YZDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewController.h; sourceTree = "<group>"; };
+		B2D43F571CC4D96F003519EC /* YZDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayViewController.m; sourceTree = "<group>"; };
+		B2D43F581CC4D96F003519EC /* YZDisplayViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewHeader.h; sourceTree = "<group>"; };
+		B2D43F591CC4D96F003519EC /* YZFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZFlowLayout.h; sourceTree = "<group>"; };
+		B2D43F5A1CC4D96F003519EC /* YZFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZFlowLayout.m; sourceTree = "<group>"; };
+		B2D43F5F1CC4D9B6003519EC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B2D43F651CC4DB40003519EC /* SubjectTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTwoViewController.swift; sourceTree = "<group>"; };
+		B2D43F671CC4DB4D003519EC /* SubjectThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectThreeViewController.swift; sourceTree = "<group>"; };
+		B2D43F691CC4DB56003519EC /* MyChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChartsViewController.swift; sourceTree = "<group>"; };
 		B2E41F4F1CC29A4F006C541F /* 驾照轻松考.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "驾照轻松考.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E41F521CC29A4F006C541F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2E41F571CC29A4F006C541F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,8 +144,10 @@
 		B2D43F201CC3CD80003519EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B2E41F801CC29B2D006C541F /* HomeViewController.swift */,
 				B23E08471CC3B42E00AA0C95 /* ChooseTestTableViewController.swift */,
 				B2D43F331CC3E46F003519EC /* ChooseChapterTableViewController.swift */,
+				B2D43F411CC4A2EA003519EC /* MainTestViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -117,6 +155,10 @@
 		B2D43F211CC3CD87003519EC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B2D43F371CC46E5B003519EC /* ChooseChapterTableViewCell.swift */,
+				B2D43F391CC4768A003519EC /* TestScrollView.swift */,
+				B2D43F3B1CC489AF003519EC /* UIChooseAnswerTableViewCell.swift */,
+				B2D43F3C1CC489AF003519EC /* UIChooseAnswerTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -134,7 +176,9 @@
 		B2D43F231CC3CD9A003519EC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B2D43F511CC4D96F003519EC /* YZDisplayViewController */,
 				B2D43F311CC3D82F003519EC /* data.sqlite */,
+				B2D43F4C1CC4D717003519EC /* Swift-Bridge.h */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -142,7 +186,9 @@
 		B2D43F261CC3CDB6003519EC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B2D43F351CC46CB4003519EC /* UIColor+Extension.swift */,
 				B2D43F291CC3CDFC003519EC /* DataBaseManager.swift */,
+				B2D43F3F1CC4959C003519EC /* AnswerManager.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -150,8 +196,57 @@
 		B2D43F271CC3CDBB003519EC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B2D43F5F1CC4D9B6003519EC /* MainViewController.swift */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		B2D43F511CC4D96F003519EC /* YZDisplayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B2D43F521CC4D96F003519EC /* UIView+Frame.h */,
+				B2D43F531CC4D96F003519EC /* UIView+Frame.m */,
+				B2D43F541CC4D96F003519EC /* YZDisplayTitleLabel.h */,
+				B2D43F551CC4D96F003519EC /* YZDisplayTitleLabel.m */,
+				B2D43F561CC4D96F003519EC /* YZDisplayViewController.h */,
+				B2D43F571CC4D96F003519EC /* YZDisplayViewController.m */,
+				B2D43F581CC4D96F003519EC /* YZDisplayViewHeader.h */,
+				B2D43F591CC4D96F003519EC /* YZFlowLayout.h */,
+				B2D43F5A1CC4D96F003519EC /* YZFlowLayout.m */,
+			);
+			path = YZDisplayViewController;
+			sourceTree = "<group>";
+		};
+		B2D43F611CC4DAFE003519EC /* SubjectTwo */ = {
+			isa = PBXGroup;
+			children = (
+				B2D43F651CC4DB40003519EC /* SubjectTwoViewController.swift */,
+			);
+			name = SubjectTwo;
+			sourceTree = "<group>";
+		};
+		B2D43F621CC4DB0D003519EC /* SubjectThree */ = {
+			isa = PBXGroup;
+			children = (
+				B2D43F671CC4DB4D003519EC /* SubjectThreeViewController.swift */,
+			);
+			name = SubjectThree;
+			sourceTree = "<group>";
+		};
+		B2D43F631CC4DB15003519EC /* MyCharts */ = {
+			isa = PBXGroup;
+			children = (
+				B2D43F691CC4DB56003519EC /* MyChartsViewController.swift */,
+			);
+			name = MyCharts;
+			sourceTree = "<group>";
+		};
+		B2D43F6B1CC52091003519EC /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B2E41F821CC29B59006C541F /* LeftMenuViewController.swift */,
+			);
+			name = LeftMenu;
 			sourceTree = "<group>";
 		};
 		B2E41F461CC29A4F006C541F = {
@@ -179,6 +274,10 @@
 		B2E41F511CC29A4F006C541F /* 驾照轻松考 */ = {
 			isa = PBXGroup;
 			children = (
+				B2D43F6B1CC52091003519EC /* LeftMenu */,
+				B2D43F631CC4DB15003519EC /* MyCharts */,
+				B2D43F621CC4DB0D003519EC /* SubjectThree */,
+				B2D43F611CC4DAFE003519EC /* SubjectTwo */,
 				B2D43F271CC3CDBB003519EC /* Main */,
 				B2D43F261CC3CDB6003519EC /* Tools */,
 				B2D43F231CC3CD9A003519EC /* Resource */,
@@ -188,8 +287,6 @@
 				B2E41F591CC29A4F006C541F /* Assets.xcassets */,
 				B2E41F5B1CC29A4F006C541F /* LaunchScreen.storyboard */,
 				B2E41F5E1CC29A4F006C541F /* Info.plist */,
-				B2E41F801CC29B2D006C541F /* HomeViewController.swift */,
-				B2E41F821CC29B59006C541F /* LeftMenuViewController.swift */,
 			);
 			path = "驾照轻松考";
 			sourceTree = "<group>";
@@ -341,6 +438,7 @@
 			files = (
 				B2D43F321CC3DA5F003519EC /* data.sqlite in Resources */,
 				B2E41F5D1CC29A4F006C541F /* LaunchScreen.storyboard in Resources */,
+				B2D43F3E1CC489AF003519EC /* UIChooseAnswerTableViewCell.xib in Resources */,
 				B2E41F5A1CC29A4F006C541F /* Assets.xcassets in Resources */,
 				B2E41F581CC29A4F006C541F /* Main.storyboard in Resources */,
 			);
@@ -420,10 +518,24 @@
 				B2E41F811CC29B2D006C541F /* HomeViewController.swift in Sources */,
 				B2D43F2E1CC3D164003519EC /* Answer.swift in Sources */,
 				B2D43F341CC3E46F003519EC /* ChooseChapterTableViewController.swift in Sources */,
+				B2D43F401CC4959C003519EC /* AnswerManager.swift in Sources */,
+				B2D43F5E1CC4D96F003519EC /* YZFlowLayout.m in Sources */,
+				B2D43F3A1CC4768A003519EC /* TestScrollView.swift in Sources */,
+				B2D43F5C1CC4D96F003519EC /* YZDisplayTitleLabel.m in Sources */,
 				B2D43F301CC3D186003519EC /* SubChapter.swift in Sources */,
+				B2D43F5B1CC4D96F003519EC /* UIView+Frame.m in Sources */,
+				B2D43F381CC46E5B003519EC /* ChooseChapterTableViewCell.swift in Sources */,
+				B2D43F681CC4DB4D003519EC /* SubjectThreeViewController.swift in Sources */,
+				B2D43F3D1CC489AF003519EC /* UIChooseAnswerTableViewCell.swift in Sources */,
 				B23E08481CC3B42E00AA0C95 /* ChooseTestTableViewController.swift in Sources */,
+				B2D43F661CC4DB40003519EC /* SubjectTwoViewController.swift in Sources */,
 				B2E41F831CC29B59006C541F /* LeftMenuViewController.swift in Sources */,
+				B2D43F6A1CC4DB56003519EC /* MyChartsViewController.swift in Sources */,
+				B2D43F5D1CC4D96F003519EC /* YZDisplayViewController.m in Sources */,
 				B2D43F2A1CC3CDFC003519EC /* DataBaseManager.swift in Sources */,
+				B2D43F421CC4A2EA003519EC /* MainTestViewController.swift in Sources */,
+				B2D43F361CC46CB4003519EC /* UIColor+Extension.swift in Sources */,
+				B2D43F601CC4D9B6003519EC /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +684,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "驾照轻松考/Swift-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -584,6 +697,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "驾照轻松考/Swift-Bridge.h";
 			};
 			name = Release;
 		};

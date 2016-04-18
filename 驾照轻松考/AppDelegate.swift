@@ -10,11 +10,12 @@ import UIKit
 import KGFloatingDrawer
 import FMDB
 
-let bgcolor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
+let bgcolor = UIColor(red: 41/255, green: 157/255, blue: 133/255, alpha: 1.0)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
     var _drawerViewController: KGDrawerViewController?
     
     var drawerViewController: KGDrawerViewController {
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = drawerViewController
         window?.makeKeyAndVisible()
         setupUI()
+         
         // Override point for customization after application launch.
         return true
         
@@ -61,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func prepareDrawerViewController() ->     KGDrawerViewController {
         let drawerViewController = KGDrawerViewController()
-        drawerViewController.centerViewController = UINavigationController(rootViewController: viewControllerForStoryboardId("HomeViewController"))
+        drawerViewController.centerViewController = UINavigationController(rootViewController: MainViewController())
         
         drawerViewController.leftViewController = viewControllerForStoryboardId("LeftMenuViewController")
         
