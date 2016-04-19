@@ -43,9 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+    
     func  setupUI()
     {
-        
+         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
         
         UINavigationBar.appearance().titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]

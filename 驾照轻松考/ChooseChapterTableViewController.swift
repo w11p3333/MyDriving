@@ -52,7 +52,7 @@ class ChooseChapterTableViewController: UITableViewController {
         cell.chapterNum.clipsToBounds = true
         cell.chapterNum.layer.cornerRadius = 10
        
-
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell
     }

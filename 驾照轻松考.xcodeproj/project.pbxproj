@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		6541E8F2CA07C62886A7C4E2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6026C0A486E4E17BD842665F /* Pods.framework */; };
 		B23E08481CC3B42E00AA0C95 /* ChooseTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23E08471CC3B42E00AA0C95 /* ChooseTestTableViewController.swift */; };
+		B24AA1881CC6738D001B67D3 /* backItemImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B24AA17D1CC6738D001B67D3 /* backItemImage@2x.png */; };
+		B24AA1891CC6738D001B67D3 /* backItemImage_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B24AA17E1CC6738D001B67D3 /* backItemImage_hl@2x.png */; };
+		B24AA18A1CC6738D001B67D3 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = B24AA1811CC6738D001B67D3 /* NJKWebViewProgress.m */; };
+		B24AA18B1CC6738D001B67D3 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B24AA1831CC6738D001B67D3 /* NJKWebViewProgressView.m */; };
+		B24AA18C1CC6738D001B67D3 /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24AA1851CC6738D001B67D3 /* RxWebViewController.m */; };
+		B24AA18D1CC6738D001B67D3 /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24AA1871CC6738D001B67D3 /* RxWebViewNavigationViewController.m */; };
 		B2D43F2A1CC3CDFC003519EC /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F291CC3CDFC003519EC /* DataBaseManager.swift */; };
 		B2D43F2C1CC3D141003519EC /* SubjectName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F2B1CC3D141003519EC /* SubjectName.swift */; };
 		B2D43F2E1CC3D164003519EC /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F2D1CC3D164003519EC /* Answer.swift */; };
@@ -61,6 +67,16 @@
 		30863A58341ECFE735A986A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6026C0A486E4E17BD842665F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23E08471CC3B42E00AA0C95 /* ChooseTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTestTableViewController.swift; sourceTree = "<group>"; };
+		B24AA17D1CC6738D001B67D3 /* backItemImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backItemImage@2x.png"; sourceTree = "<group>"; };
+		B24AA17E1CC6738D001B67D3 /* backItemImage_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backItemImage_hl@2x.png"; sourceTree = "<group>"; };
+		B24AA1801CC6738D001B67D3 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		B24AA1811CC6738D001B67D3 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		B24AA1821CC6738D001B67D3 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		B24AA1831CC6738D001B67D3 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		B24AA1841CC6738D001B67D3 /* RxWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewController.h; sourceTree = "<group>"; };
+		B24AA1851CC6738D001B67D3 /* RxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewController.m; sourceTree = "<group>"; };
+		B24AA1861CC6738D001B67D3 /* RxWebViewNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewNavigationViewController.h; sourceTree = "<group>"; };
+		B24AA1871CC6738D001B67D3 /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
 		B2D43F291CC3CDFC003519EC /* DataBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		B2D43F2B1CC3D141003519EC /* SubjectName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectName.swift; sourceTree = "<group>"; };
 		B2D43F2D1CC3D164003519EC /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
@@ -131,6 +147,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B24AA17C1CC6738D001B67D3 /* RxWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B24AA17D1CC6738D001B67D3 /* backItemImage@2x.png */,
+				B24AA17E1CC6738D001B67D3 /* backItemImage_hl@2x.png */,
+				B24AA17F1CC6738D001B67D3 /* NJKWebViewProgress */,
+				B24AA1841CC6738D001B67D3 /* RxWebViewController.h */,
+				B24AA1851CC6738D001B67D3 /* RxWebViewController.m */,
+				B24AA1861CC6738D001B67D3 /* RxWebViewNavigationViewController.h */,
+				B24AA1871CC6738D001B67D3 /* RxWebViewNavigationViewController.m */,
+			);
+			path = RxWebViewController;
+			sourceTree = "<group>";
+		};
+		B24AA17F1CC6738D001B67D3 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				B24AA1801CC6738D001B67D3 /* NJKWebViewProgress.h */,
+				B24AA1811CC6738D001B67D3 /* NJKWebViewProgress.m */,
+				B24AA1821CC6738D001B67D3 /* NJKWebViewProgressView.h */,
+				B24AA1831CC6738D001B67D3 /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
 		B2D43F1F1CC3CD5F003519EC /* Subjectone */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +217,7 @@
 		B2D43F231CC3CD9A003519EC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B24AA17C1CC6738D001B67D3 /* RxWebViewController */,
 				B2D43F511CC4D96F003519EC /* YZDisplayViewController */,
 				B2D43F311CC3D82F003519EC /* data.sqlite */,
 				B2D43F4C1CC4D717003519EC /* Swift-Bridge.h */,
@@ -438,6 +480,8 @@
 			files = (
 				B2D43F321CC3DA5F003519EC /* data.sqlite in Resources */,
 				B2E41F5D1CC29A4F006C541F /* LaunchScreen.storyboard in Resources */,
+				B24AA1891CC6738D001B67D3 /* backItemImage_hl@2x.png in Resources */,
+				B24AA1881CC6738D001B67D3 /* backItemImage@2x.png in Resources */,
 				B2D43F3E1CC489AF003519EC /* UIChooseAnswerTableViewCell.xib in Resources */,
 				B2E41F5A1CC29A4F006C541F /* Assets.xcassets in Resources */,
 				B2E41F581CC29A4F006C541F /* Main.storyboard in Resources */,
@@ -520,19 +564,23 @@
 				B2D43F341CC3E46F003519EC /* ChooseChapterTableViewController.swift in Sources */,
 				B2D43F401CC4959C003519EC /* AnswerManager.swift in Sources */,
 				B2D43F5E1CC4D96F003519EC /* YZFlowLayout.m in Sources */,
+				B24AA18C1CC6738D001B67D3 /* RxWebViewController.m in Sources */,
 				B2D43F3A1CC4768A003519EC /* TestScrollView.swift in Sources */,
 				B2D43F5C1CC4D96F003519EC /* YZDisplayTitleLabel.m in Sources */,
 				B2D43F301CC3D186003519EC /* SubChapter.swift in Sources */,
 				B2D43F5B1CC4D96F003519EC /* UIView+Frame.m in Sources */,
 				B2D43F381CC46E5B003519EC /* ChooseChapterTableViewCell.swift in Sources */,
+				B24AA18D1CC6738D001B67D3 /* RxWebViewNavigationViewController.m in Sources */,
 				B2D43F681CC4DB4D003519EC /* SubjectThreeViewController.swift in Sources */,
 				B2D43F3D1CC489AF003519EC /* UIChooseAnswerTableViewCell.swift in Sources */,
 				B23E08481CC3B42E00AA0C95 /* ChooseTestTableViewController.swift in Sources */,
 				B2D43F661CC4DB40003519EC /* SubjectTwoViewController.swift in Sources */,
+				B24AA18A1CC6738D001B67D3 /* NJKWebViewProgress.m in Sources */,
 				B2E41F831CC29B59006C541F /* LeftMenuViewController.swift in Sources */,
 				B2D43F6A1CC4DB56003519EC /* MyChartsViewController.swift in Sources */,
 				B2D43F5D1CC4D96F003519EC /* YZDisplayViewController.m in Sources */,
 				B2D43F2A1CC3CDFC003519EC /* DataBaseManager.swift in Sources */,
+				B24AA18B1CC6738D001B67D3 /* NJKWebViewProgressView.m in Sources */,
 				B2D43F421CC4A2EA003519EC /* MainTestViewController.swift in Sources */,
 				B2D43F361CC46CB4003519EC /* UIColor+Extension.swift in Sources */,
 				B2D43F601CC4D9B6003519EC /* MainViewController.swift in Sources */,

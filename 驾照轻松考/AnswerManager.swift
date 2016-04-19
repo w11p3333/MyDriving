@@ -32,11 +32,5 @@ class AnswerManager: NSObject {
     return array
     }
     
-//    func formatSizeToString(str:String,font:UIFont,size:CGSize) -> CGSize
-//    {
-//     let answerStr = str as NSString
-//     let newsize = answerStr.boundingRectWithSize(<#T##size: CGSize##CGSize#>, options: <#T##NSStringDrawingOptions#>, attributes: <#T##[String : AnyObject]?#>, context: <#T##NSStringDrawingContext?#>)
-//        return newsize
-//        
-//    }
+
 }

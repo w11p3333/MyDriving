@@ -20,6 +20,13 @@ class MainTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+
+        //改变按钮
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_home_up"), style: .Plain, target: self, action: #selector(MainTestViewController.back))
+
+        self.navigationItem.hidesBackButton = true
+        
         loadData()
         self.view.addSubview(testScrollView!)
         // Do any additional setup after loading the view.
@@ -118,5 +125,10 @@ class MainTestViewController: UIViewController {
     }
 
   
+    func back()
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+
+    }
 
 }

@@ -13,17 +13,6 @@ protocol TestScrollViewDelegate:NSObjectProtocol {
     func scrollViewDidEndDecelerating(index:Int)
     func answerQuestion(array:[AnyObject])
 }
-
-struct AnswerType {
-    
-    static let A:String = "A"
-    static let B:String = "B"
-    static let C:String = "C"
-    static let D:String = "D"
-    static let True:String = "T"
-    static let False:String = "F"
-}
-
 class TestScrollView: UIView {
 
     
@@ -36,6 +25,7 @@ class TestScrollView: UIView {
     var dataArray = [AnyObject]()
     var hadAnswerArray = [AnyObject]()
     var scrollView : UIScrollView?
+    //底部视图
     var footview: UIView?
     var footBtn: UIButton?
     
@@ -44,8 +34,7 @@ class TestScrollView: UIView {
     var rightTableView : UITableView?
     var tableFooterView : UIView?
     
-    //初始化答案类型
-    var answerType = AnswerType.A
+
     //记录是否选择
     var didSelected:Bool = false
 
@@ -80,6 +69,7 @@ class TestScrollView: UIView {
         scrollView?.showsVerticalScrollIndicator = false
         scrollView?.bounces = false
         scrollView?.pagingEnabled = true
+        
         if dataArray.count > 1
         {
          scrollView?.contentSize = CGSizeMake(self.frame.width * 2, 0)
@@ -117,7 +107,7 @@ class TestScrollView: UIView {
      footBtn!.setTitle("查看答案", forState: .Normal)
      footBtn!.setTitle("下一个", forState: .Selected)
      footBtn!.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-     footBtn!.addTarget(self, action: "footButtonClick", forControlEvents: UIControlEvents.TouchUpInside)
+     footBtn!.addTarget(self, action: #selector(TestScrollView.footButtonClick), forControlEvents: UIControlEvents.TouchUpInside)
      footview?.addSubview(footBtn!)
     }
     
@@ -229,8 +219,8 @@ class TestScrollView: UIView {
     func resetStatus()
     {
         //设置状态
+         footview?.hidden = true
         didSelected = false
-        footview?.hidden = true
         tableFooterView?.hidden = true
         footBtn?.selected = false
     }
@@ -243,7 +233,7 @@ class TestScrollView: UIView {
      {
       //下一个
       footBtn?.selected = false
-        
+      
      }
     else
      {
@@ -279,7 +269,7 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+      
         tableView.registerNib(UINib(nibName: "UIChooseAnswerTableViewCell",bundle: nil), forCellReuseIdentifier: "AnswerCell")
         let cell = tableView.dequeueReusableCellWithIdentifier("AnswerCell", forIndexPath: indexPath) as! UIChooseAnswerTableViewCell
         cell.answerStatusImage.hidden = true
@@ -303,87 +293,71 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         }
 
         
-  
-        
         return cell
         
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       
+        
+        
+        
+        //WARNING 判断题没有做
+        
         //如果已经选择 不能再次选择
         if didSelected
         {
-         didSelected = true
          return
         }
         
-        //出现按钮
-        self.footview?.hidden = false
-        
-        
-        
-        model = getFitModel(tableView)
-
-       //获取用户的选择
-       
-        if  Int(model.mtype!)! == 1
-        {
-        switch indexPath.row {
-        case 0:
-             answerType = AnswerType.A
-        case 1:
-             answerType = AnswerType.B
-        case 2:
-            answerType = AnswerType.C
-        case 3:
-            answerType = AnswerType.D
+        //保存正确答案的位置
+        var answerIndexpath = 0
+        switch model.manswer! {
+        case "A":
+            answerIndexpath = 0
+        case "B":
+            answerIndexpath = 1
+        case "C":
+            answerIndexpath = 2
+        case "D":
+            answerIndexpath = 3
         default:
             print("见鬼了")
         }
-        }
-        else if Int(model.mtype!)! == 2
+        let chooseCell = (tableView.cellForRowAtIndexPath(indexPath) as! UIChooseAnswerTableViewCell)
+        let rightCell =  tableView.visibleCells[answerIndexpath] as! UIChooseAnswerTableViewCell
+        
+        //出现按钮
+        self.footview?.hidden = false
+        //已选择答案
+        didSelected = true
+        //显示图片
+        chooseCell.answerStatusImage.hidden = false
+        rightCell.answerStatusImage.hidden = false
+        if answerIndexpath == indexPath.row
         {
-            switch indexPath.row {
-            case 0:
-                 answerType = AnswerType.True
-            case 1:
-                 answerType = AnswerType.False
-            default:
-                print("见鬼了")
-        }
-        }
-        //判断答案是否正确
-        let cell = tableView.dequeueReusableCellWithIdentifier("AnswerCell", forIndexPath: indexPath) as! UIChooseAnswerTableViewCell
-        if answerType == model.manswer!
-        {
+         
+         chooseCell.answerStatusImage.image = UIImage(named: "right")
            
-            cell.answerStatusImage?.image = nil
-            cell.answerStatusImage.hidden = false
-            cell.answerStatusImage.image = UIImage(named: "right")
-            
         }
         else
         {
-           
-            cell.answerStatusImage?.image = nil
-            cell.answerStatusImage.hidden = false
-            cell.answerStatusImage.image = UIImage(named: "wrong")
+         chooseCell.answerStatusImage.image = UIImage(named: "wrong")
+         
+         rightCell.answerStatusImage.image = UIImage(named: "right")
         }
+
         
-        didSelected = true
+
     }
     
     // MARK: tableView delegate
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 80
+        return 100
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 80
-    }
-    
+
+    //设置题目
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
        
         model = getFitModel(tableView)
@@ -399,17 +373,17 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
          str = model.mquestion!
         }
         
-        let view = UIView(frame: CGRectMake(0, 0, self.frame.width - 8 , 80))
-        let label = UILabel(frame: CGRectMake(10, 10, self.frame.width - 8 , 60))
-     //   print(String(getQuestionNum(tableView, currentPage: currentPage)))
+        let view = UIView(frame: CGRectMake(0, 0, self.frame.width - 8 , 100))
+        let label = UILabel(frame: CGRectMake(10, 10, self.frame.width - 8 , 80))
         label.text = String(getQuestionNum(tableView, currentPage: currentPage)) + "."  + str
-        label.font = UIFont.systemFontOfSize(16)
+        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
+   
         label.numberOfLines = 0
         label.lineBreakMode = .ByCharWrapping
         view.addSubview(label)
         return view
     }
-    
+    //设置答案
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         //选中按钮才出现
@@ -419,13 +393,19 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         }
         
         model = getFitModel(tableView)
-       tableFooterView = UIView(frame: CGRectMake(0, 60, self.frame.width - 10 , 80))
-        let label = UILabel(frame: CGRectMake(10, 60, self.frame.width - 10 , 60))
-        label.textColor = UIColor.redColor()
-        label.text = "答案解析:\n" + model.mdesc!
-        label.font = UIFont.systemFontOfSize(16)
+       tableFooterView = UIView(frame: CGRectMake(0, 60, self.frame.width - 10 , 200))
+        let footLabel = UILabel(frame: CGRectMake(10, 20, self.frame.width - 10 , 20))
+        footLabel.text = "答案解析"
+        footLabel.textColor = UIColor.blackColor()
+        footLabel.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
+        let label = UILabel(frame: CGRectMake(10, 60, self.frame.width - 10 , 100))
+        label.textColor = bgcolor
+        label.backgroundColor = UIColor.whiteColor()
+        label.text = "\n" + model.mdesc!
+        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
         label.numberOfLines = 0
         label.lineBreakMode = .ByCharWrapping
+        tableFooterView!.addSubview(footLabel)
         tableFooterView!.addSubview(label)
         return tableFooterView
 
@@ -433,41 +413,41 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
     
     // MARK: TestScrollViewDelegate
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        
         let currentOffset = scrollView.contentOffset
-     
-      
-        
-        if !didSelected
-        {
-            SVProgressHUD.showErrorWithStatus("你没有回答上一题哦")
-        }
-
-        
-        
         let page = Int((currentOffset.x) / self.frame.width)
         delegate?.scrollViewDidEndDecelerating(page + 1)
         if page < dataArray.count - 1 && page > 0
         {
-         scrollView.contentSize = CGSizeMake(currentOffset.x + self.frame.width * 2, 0)
-         leftTableView?.frame = CGRectMake(currentOffset.x - self.frame.width , 0, self.frame.width, self.frame.height)
-         centerTableView?.frame = CGRectMake(currentOffset.x , 0, self.frame.width, self.frame.height)
-         rightTableView?.frame = CGRectMake(currentOffset.x + self.frame.width, 0, self.frame.width, self.frame.height)
-         currentPage = page
-         
-         reloadData()
-       
+            scrollView.contentSize = CGSizeMake(currentOffset.x + self.frame.width * 2, 0)
+            
+            leftTableView?.frame = CGRectMake(currentOffset.x - self.frame.width , 0, self.frame.width, self.frame.height)
+            centerTableView?.frame = CGRectMake(currentOffset.x , 0, self.frame.width, self.frame.height)
+            rightTableView?.frame = CGRectMake(currentOffset.x + self.frame.width, 0, self.frame.width, self.frame.height)
+            currentPage = page
+            
+            scrollView.pagingEnabled = false
+            reloadData()
+            
+            
+            
         }
 
         
     }
     
+
     
-    
+ 
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset
+     
+    //    scrollView.contentSize = CGSizeMake(currentOffset.x + self.frame.width * 2, 0)
+
              resetStatus()
+             reloadData()
     }
+    
     
     
 }
