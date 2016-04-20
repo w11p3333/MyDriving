@@ -9,6 +9,8 @@
 import UIKit
 import FMDB
 
+
+//选择考试类型
 class ChooseTestTableViewController: UITableViewController {
 
     
@@ -22,12 +24,6 @@ class ChooseTestTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         self.tableView.rowHeight = 100
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
  

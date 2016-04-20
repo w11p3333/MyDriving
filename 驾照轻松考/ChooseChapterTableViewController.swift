@@ -8,6 +8,7 @@
 
 import UIKit
 
+//选择章节
 class ChooseChapterTableViewController: UITableViewController {
 
     var chapterData = [SubjectName]()
@@ -60,10 +61,56 @@ class ChooseChapterTableViewController: UITableViewController {
    
  
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if currentPage != 0
+        {
+            
+            let alert = UIAlertController(title: "上次已做到第\(currentPage + 1)题,要继续开始吗？", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+            
+            
+            let cancelAction = UIAlertAction(title: "从头开始", style: UIAlertActionStyle.Default) { (action) in
+                
+                //将page清空
+                currentPage = 0
+                
+               self.pushToTestView()
+                
+                
+            }
+            
+            
+            let okAction = UIAlertAction(title: "继续", style: UIAlertActionStyle.Default) { (action) in
+                
+                
+            //currentPage从0开始的 所以加1
+                currentPage += 1
+              self.pushToTestView()
+                
+            }
+            
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+
+     else
+        {
+         pushToTestView()
+        }
+ 
+    }
+    
+    
+    func pushToTestView()
+    {
+    
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("MainTestVc") as! MainTestViewController
         vc.type = 1
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+ 
+    
+    
 }

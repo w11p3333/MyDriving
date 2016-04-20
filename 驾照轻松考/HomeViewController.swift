@@ -12,6 +12,13 @@ import SDCycleScrollView
 
 class HomeViewController: UIViewController {
 
+    
+    @IBOutlet weak var totalNumLabel: UILabel!
+    
+    @IBOutlet weak var unfinishedLabel: UILabel!
+    
+    @IBOutlet weak var finishedLabel: UILabel!
+    
     @IBOutlet weak var threeConstraint: NSLayoutConstraint!
     @IBOutlet weak var twoConstraint: NSLayoutConstraint!
     @IBOutlet weak var oneConstraint: NSLayoutConstraint!
@@ -21,14 +28,20 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        //label数据
+        let totalNum = DataBaseManager.shareManager().getData(.answer).count
+        totalNumLabel.text = String(totalNum)
+        finishedLabel.text = String(finishedNum)
+        unfinishedLabel.text = String(totalNum - finishedNum)
         //计算四个按钮等距
         let constraint = (self.view.frame.width - 40 - 20 - 4 * 64 ) / 3
         threeConstraint.constant = constraint
         twoConstraint.constant = constraint
         oneConstraint.constant = constraint
-        
-        self.view.backgroundColor = UIColor(white: 0.99, alpha: 0.95)
-
+        //背景颜色
+        self.view.backgroundColor = bgGrayColor
+        //设置按钮
         self.startBtn.clipsToBounds = true
         self.startBtn.layer.cornerRadius = 40
         //设置轮播

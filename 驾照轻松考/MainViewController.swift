@@ -42,7 +42,7 @@ class MainViewController: YZDisplayViewController {
         endR = 32 / 255.0
         endG = 142 / 255.0
         endB = 115 / 255.0
-        titleScrollViewColor = UIColor.whiteColor()
+        titleScrollViewColor = UIColor(white: 0.91, alpha: 0.99)
       
         
         
@@ -68,7 +68,7 @@ class MainViewController: YZDisplayViewController {
         addChildViewController(three)
         let sb4 = UIStoryboard(name: "Main", bundle: nil)
         let chart = sb4.instantiateViewControllerWithIdentifier("MyChartsVc")
-        chart.title = "图表"
+        chart.title = "统计"
         addChildViewController(chart)
 
     }

@@ -10,7 +10,21 @@ import UIKit
 import KGFloatingDrawer
 import FMDB
 
+
+//全局背景色
+let bgGrayColor = UIColor(white: 0.99, alpha: 0.95)
+//全局绿色
 let bgcolor = UIColor(red: 41/255, green: 157/255, blue: 133/255, alpha: 1.0)
+//做题数
+var finishedNum:Int = 0
+//答对数
+var rightNum:Int = 0
+//答错数
+var wrongNum:Int = 0
+
+//当前页
+var currentPage:Int = 0
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        loadDefault()
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = drawerViewController
         window?.makeKeyAndVisible()
@@ -42,24 +57,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    //加载用户保存数据
+    func loadDefault()
+    {
+     if NSUserDefaults.standardUserDefaults().boolForKey("firstLaunch")
+     {
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstLaunch")
+        //初始化数据
+        finishedNum = 0
+        rightNum = 0
+        wrongNum = 0
+        currentPage = 0
+        }
+        else
+     {
+        finishedNum = NSUserDefaults.standardUserDefaults().integerForKey("finishedNum")
+        wrongNum = NSUserDefaults.standardUserDefaults().integerForKey("wrongNum")
+        rightNum = NSUserDefaults.standardUserDefaults().integerForKey("rightNum")
+        currentPage = NSUserDefaults.standardUserDefaults().integerForKey("currentPage")
+        }
+     
+    }
     
     
     func  setupUI()
     {
-         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
         
         UINavigationBar.appearance().titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
-        
         //返回键颜色
         UINavigationBar.appearance().barStyle = UIBarStyle.Default
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         //背景颜色
         UINavigationBar.appearance().barTintColor = bgcolor
-        
-       
-        
-
     }
     
     func prepareDrawerViewController() ->     KGDrawerViewController {
@@ -82,13 +113,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func viewControllerForStoryboardId(storyboardId: String) -> UIViewController {
-        let viewController: UIViewController = drawerStoryboard().instantiateViewControllerWithIdentifier(storyboardId) as! UIViewController
+        let viewController: UIViewController = drawerStoryboard().instantiateViewControllerWithIdentifier(storyboardId) 
         return viewController
     }
 
     func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        //进入后台之前保存数据
+        
+        NSUserDefaults.standardUserDefaults().setInteger(finishedNum, forKey: "finishedNum")
+        NSUserDefaults.standardUserDefaults().setInteger(rightNum, forKey: "rightNum")
+        NSUserDefaults.standardUserDefaults().setInteger(wrongNum, forKey: "wrongNum")
+        NSUserDefaults.standardUserDefaults().setInteger(currentPage, forKey: "currentPage")
+        print("保存数据成功")
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
@@ -105,6 +141,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
+       
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 

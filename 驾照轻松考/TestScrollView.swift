@@ -13,14 +13,16 @@ protocol TestScrollViewDelegate:NSObjectProtocol {
     func scrollViewDidEndDecelerating(index:Int)
     func answerQuestion(array:[AnyObject])
 }
+
+
+
 class TestScrollView: UIView {
 
-    
+    //初始化模型
     var model = Answer()
 
     weak var delegate: TestScrollViewDelegate?
-    //当前页
-    var currentPage:Int = 0
+
     //数据数组
     var dataArray = [AnyObject]()
     var hadAnswerArray = [AnyObject]()
@@ -33,15 +35,16 @@ class TestScrollView: UIView {
     var centerTableView : UITableView?
     var rightTableView : UITableView?
     var tableFooterView : UIView?
-    
-
-    //记录是否选择
+    //进度条长度
+    var progressWidth: Double = 0.0
+    //记录是否选择了答案
     var didSelected:Bool = false
-
+    //上次的偏移量
+    var lastOffset:CGFloat = 0
     
     init(frame: CGRect,data: [AnyObject]) {
         super.init(frame: frame)
-        currentPage = 0
+       
         dataArray = data
         for _ in 0...data.count
         {
@@ -62,8 +65,8 @@ class TestScrollView: UIView {
     
     func creatScrollViewWithFrame(frame:CGRect)
     {
-        
-        scrollView = UIScrollView(frame: frame)
+     
+        scrollView = UIScrollView(frame: CGRectMake(0, 64, frame.width, frame.height - 64))
         scrollView?.delegate = self
         scrollView?.showsHorizontalScrollIndicator = false
         scrollView?.showsVerticalScrollIndicator = false
@@ -100,7 +103,7 @@ class TestScrollView: UIView {
     func creatFootViewWithFrame(frame:CGRect)
     {
      footview = UIView(frame: CGRectMake(0, frame.height - 60, frame.width, 60))
-     footview!.backgroundColor = UIColor(white: 0.99, alpha: 0.95)
+     footview!.backgroundColor = bgGrayColor
      let width = frame.width - 100
     footBtn = UIButton(frame: CGRectMake( 50 , 10, width, 40))
      footBtn!.backgroundColor = bgcolor
@@ -312,7 +315,12 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         
         //保存正确答案的位置
         var answerIndexpath = 0
-        switch model.manswer! {
+
+        model = getFitModel(tableView)
+        if Int(model.mtype!) == 1
+        {
+        
+               switch model.manswer! {
         case "A":
             answerIndexpath = 0
         case "B":
@@ -324,9 +332,18 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         default:
             print("见鬼了")
         }
+            
+        }
+        else
+        {
+            answerIndexpath = model.manswer! == "对" ? 0 : 1
+        }
+        
         let chooseCell = (tableView.cellForRowAtIndexPath(indexPath) as! UIChooseAnswerTableViewCell)
         let rightCell =  tableView.visibleCells[answerIndexpath] as! UIChooseAnswerTableViewCell
         
+        //计算做题数
+        finishedNum += 1
         //出现按钮
         self.footview?.hidden = false
         //已选择答案
@@ -338,10 +355,13 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         {
          
          chooseCell.answerStatusImage.image = UIImage(named: "right")
-           
+        //正确加一
+         rightNum += 1
         }
         else
         {
+        //错误加一
+            wrongNum += 1
          chooseCell.answerStatusImage.image = UIImage(named: "wrong")
          
          rightCell.answerStatusImage.image = UIImage(named: "right")
@@ -357,6 +377,7 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
     }
     
 
+    
     //设置题目
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
        
@@ -374,12 +395,42 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         }
         
         let view = UIView(frame: CGRectMake(0, 0, self.frame.width - 8 , 100))
-        let label = UILabel(frame: CGRectMake(10, 10, self.frame.width - 8 , 80))
+        
+        //进度条
+        let progressLabel = UILabel(frame: CGRectMake(8, 8, self.frame.width - 16 , 20))
+        progressLabel.backgroundColor = UIColor.whiteColor()
+        let progress = dataArray.count - currentPage
+        progressLabel.text = "\(progress)"
+        progressLabel.font = UIFont.systemFontOfSize(11)
+        progressLabel.textAlignment = NSTextAlignment.Center
+        //暂时设定为0.194
+        let backView = UIView(frame: CGRectMake(0, 0, CGFloat(progressWidth) , 20))
+        progressWidth += 0.194
+        backView.backgroundColor = bgcolor
+        let pageLabel = UILabel(frame: CGRectMake(2, 0, 20 , 20))
+        pageLabel.hidden = true
+        pageLabel.textColor = UIColor.whiteColor()
+        pageLabel.font = UIFont.systemFontOfSize(11)
+        pageLabel.text = "\(currentPage + 1)"
+        if currentPage >= 14
+        {
+            pageLabel.hidden = false
+        }
+        progressLabel.addSubview(pageLabel)
+        progressLabel.insertSubview(backView, atIndex: 0)
+
+
+
+        
+        
+        //题目
+        let label = UILabel(frame: CGRectMake(10, 30, self.frame.width - 8 , 80))
         label.text = String(getQuestionNum(tableView, currentPage: currentPage)) + "."  + str
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
    
         label.numberOfLines = 0
         label.lineBreakMode = .ByCharWrapping
+        view.addSubview(progressLabel)
         view.addSubview(label)
         return view
     }
@@ -391,14 +442,14 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         {
          return nil
         }
-        
+       
         model = getFitModel(tableView)
-       tableFooterView = UIView(frame: CGRectMake(0, 60, self.frame.width - 10 , 200))
+       tableFooterView = UIView(frame: CGRectMake(0, 100, self.frame.width - 10 , 200))
         let footLabel = UILabel(frame: CGRectMake(10, 20, self.frame.width - 10 , 20))
         footLabel.text = "答案解析"
         footLabel.textColor = UIColor.blackColor()
         footLabel.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        let label = UILabel(frame: CGRectMake(10, 60, self.frame.width - 10 , 100))
+        let label = UILabel(frame: CGRectMake(10, 60, self.frame.width - 10 , 160))
         label.textColor = bgcolor
         label.backgroundColor = UIColor.whiteColor()
         label.text = "\n" + model.mdesc!
@@ -415,39 +466,61 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let currentOffset = scrollView.contentOffset
         let page = Int((currentOffset.x) / self.frame.width)
-        delegate?.scrollViewDidEndDecelerating(page + 1)
+
+        if currentOffset.x > lastOffset
+        {
+       
+      
         if page < dataArray.count - 1 && page > 0
         {
+              delegate?.scrollViewDidEndDecelerating(page + 1)
             scrollView.contentSize = CGSizeMake(currentOffset.x + self.frame.width * 2, 0)
             
             leftTableView?.frame = CGRectMake(currentOffset.x - self.frame.width , 0, self.frame.width, self.frame.height)
             centerTableView?.frame = CGRectMake(currentOffset.x , 0, self.frame.width, self.frame.height)
             rightTableView?.frame = CGRectMake(currentOffset.x + self.frame.width, 0, self.frame.width, self.frame.height)
-            currentPage = page
             
-            scrollView.pagingEnabled = false
+            //处理多加了一次page的错误
+            if page != 1
+            {
+                currentPage += 1
+            }
+      
+            //
             reloadData()
             
-            
-            
         }
+
+        }
+        
+        
+        
+        else
+        {
+
+        }
+    
+        //保存偏移量
+        lastOffset = currentOffset.x
+        
 
         
     }
     
-
-    
- 
-    
+    //拖动隐藏答案 重刷数据
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        let currentOffset = scrollView.contentOffset
-     
-    //    scrollView.contentSize = CGSizeMake(currentOffset.x + self.frame.width * 2, 0)
-
+  
              resetStatus()
              reloadData()
     }
     
-    
+    //让scrollview不能上下滚动
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        var offSet = scrollView.contentOffset
+        offSet.y = 0
+        scrollView.contentOffset = offSet
+        
+        
+    }
     
 }
