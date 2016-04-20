@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/Charts.framework"
   install_framework "Pods/FMDB.framework"
   install_framework "Pods/KGFloatingDrawer.framework"
   install_framework "Pods/SDCycleScrollView.framework"
@@ -91,6 +92,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/SVProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/Charts.framework"
   install_framework "Pods/FMDB.framework"
   install_framework "Pods/KGFloatingDrawer.framework"
   install_framework "Pods/SDCycleScrollView.framework"

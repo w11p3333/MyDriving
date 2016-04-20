@@ -11,13 +11,24 @@ import UIKit
 //选择章节
 class ChooseChapterTableViewController: UITableViewController {
 
-    var chapterData = [SubjectName]()
+    // 1是章节练习 2是专项练习
+    var chapterType:Int?
+    
+    var chapterData = [AnyObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //从数据库获取数据
-       chapterData =  DataBaseManager.shareManager().getData(SubjectType.chapter) as! [SubjectName]
-       
+      if chapterType == 1
+      {
+        chapterData =  DataBaseManager.shareManager().getData(SubjectType.chapter) as! [SubjectName]
+        }
+    
+      else
+      {
+         chapterData = DataBaseManager.shareManager().getData(SubjectType.subChapter) as! [SubChapter]
+        }
+        
        tableView.tableFooterView = UIView()
        tableView.rowHeight = 80
        
@@ -40,19 +51,26 @@ class ChooseChapterTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("ChooseChatperCell", forIndexPath: indexPath) as! ChooseChapterTableViewCell
+        //章节练习
+        if chapterType == 1
+        {
+            cell.chapterName.text = (chapterData as! [SubjectName])[indexPath.row].pname
 
-
-        cell.chapterName.text = chapterData[indexPath.row].pname
+            cell.chapterNum.text = (chapterData as! [SubjectName])[indexPath.row].pid
+        }
+        //专项练习
+        else
+        {
+            cell.chapterName.text = (chapterData as! [SubChapter])[indexPath.row].sname
+            cell.chapterNum.text = (chapterData as! [SubChapter])[indexPath.row].serial
+        }
         cell.chapterName.numberOfLines = 0
         cell.chapterName.lineBreakMode = NSLineBreakMode.ByCharWrapping
-        
-        let num = ["1","2","3","4","5","6","7"]
-        cell.chapterNum.text = num[indexPath.row]
         cell.chapterNum.backgroundColor = UIColor.randomColor()
         cell.chapterNum.clipsToBounds = true
         cell.chapterNum.layer.cornerRadius = 10
-       
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell
@@ -106,7 +124,7 @@ class ChooseChapterTableViewController: UITableViewController {
     
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("MainTestVc") as! MainTestViewController
-        vc.type = 1
+        vc.type = chapterType == 1 ? 1 : 4
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

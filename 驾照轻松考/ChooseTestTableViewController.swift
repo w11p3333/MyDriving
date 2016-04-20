@@ -14,8 +14,8 @@ import FMDB
 class ChooseTestTableViewController: UITableViewController {
 
     
-    let chooseTestImageData = ["7","8","9","10","11"]
-    let chooseTestNameData = ["章节练习","顺序练习","随机练习","专项练习","仿真模拟考试"]
+    let chooseTestImageData = ["7","10","8","11"]
+    let chooseTestNameData = ["章节练习","专项练习","顺序练习","仿真模拟考试"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class ChooseTestTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 4
     }
 
     
@@ -49,25 +49,77 @@ class ChooseTestTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
         case 0:
-            //章节练习
+        //章节练习
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewControllerWithIdentifier("ChooseChapterVc")
+            let vc = sb.instantiateViewControllerWithIdentifier("ChooseChapterVc") as! ChooseChapterTableViewController
+            vc.chapterType = 1
             self.navigationController?.pushViewController(vc, animated: true)
+        //专项
         case 1:
-            print("0")
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewControllerWithIdentifier("ChooseChapterVc") as! ChooseChapterTableViewController
+            vc.chapterType = 2
+            self.navigationController?.pushViewController(vc, animated: true)
+           
+        //顺序
         case 2:
-            print("0")
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewControllerWithIdentifier("MainTestVc") as! MainTestViewController
+            vc.type = 2
+            self.navigationController?.pushViewController(vc, animated: true)
+
+
+        //考试
         case 3:
-            print("0")
-        case 4:
-            print("0")
-        case 5:
-            print("0")
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewControllerWithIdentifier("MainTestVc") as! MainTestViewController
+            vc.type = 5
+            self.navigationController?.pushViewController(vc, animated: true)
+
+     
         default:
             print("见鬼了")
         }
     }
     
+    
+    func addAlert()
+    {
+        
+        if currentPage != 0
+        {
+            
+            let alert = UIAlertController(title: "上次已做到第\(currentPage + 1)题,要继续开始吗？", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+            
+            
+            let cancelAction = UIAlertAction(title: "从头开始", style: UIAlertActionStyle.Default) { (action) in
+                
+                //将page清空
+                currentPage = 0
+                
+              
+                
+                
+            }
+            
+            
+            let okAction = UIAlertAction(title: "继续", style: UIAlertActionStyle.Default) { (action) in
+                
+                
+                //currentPage从0开始的 所以加1
+                currentPage += 1
+           
+                
+            }
+            
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+            
+ 
+    }
     
 }

@@ -258,8 +258,8 @@
                                         <exclude reference="baZ-c9-w8h"/>
                                         <exclude reference="1hg-mx-Yzc"/>
                                         <exclude reference="fpm-4F-lk6"/>
-                                        <exclude reference="j2F-Sz-t31"/>
                                         <exclude reference="t8Q-P2-7el"/>
+                                        <exclude reference="j2F-Sz-t31"/>
                                         <exclude reference="XDH-ll-8kW"/>
                                     </mask>
                                 </variation>
@@ -337,8 +337,32 @@
                     <view key="view" contentMode="scaleToFill" id="YLa-gl-bjd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="75g-qz-V7F" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="331"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21g-08-hJm" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="339" width="600" height="261"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="21g-08-hJm" secondAttribute="trailing" id="0T2-8a-Aut"/>
+                            <constraint firstItem="UdK-bD-sqA" firstAttribute="top" secondItem="21g-08-hJm" secondAttribute="bottom" id="B6Q-7b-kNm"/>
+                            <constraint firstItem="75g-qz-V7F" firstAttribute="height" secondItem="21g-08-hJm" secondAttribute="height" id="IdZ-d6-shp"/>
+                            <constraint firstItem="21g-08-hJm" firstAttribute="leading" secondItem="YLa-gl-bjd" secondAttribute="leading" id="Iyy-yG-Fnt"/>
+                            <constraint firstItem="75g-qz-V7F" firstAttribute="top" secondItem="YLa-gl-bjd" secondAttribute="top" id="NSX-c4-le9"/>
+                            <constraint firstItem="75g-qz-V7F" firstAttribute="leading" secondItem="YLa-gl-bjd" secondAttribute="leading" id="Rht-88-txd"/>
+                            <constraint firstItem="21g-08-hJm" firstAttribute="top" secondItem="75g-qz-V7F" secondAttribute="bottom" id="qc4-ag-n65"/>
+                            <constraint firstAttribute="trailing" secondItem="75g-qz-V7F" secondAttribute="trailing" id="v1T-Z2-cXO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="barChartView" destination="75g-qz-V7F" id="B1w-lC-vQd"/>
+                        <outlet property="pieChartView" destination="21g-08-hJm" id="0Ta-lO-dAZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGY-tQ-jS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -25,7 +25,6 @@ class TestScrollView: UIView {
 
     //数据数组
     var dataArray = [AnyObject]()
-    var hadAnswerArray = [AnyObject]()
     var scrollView : UIScrollView?
     //底部视图
     var footview: UIView?
@@ -42,14 +41,12 @@ class TestScrollView: UIView {
     //上次的偏移量
     var lastOffset:CGFloat = 0
     
+    
+    //构造方法
     init(frame: CGRect,data: [AnyObject]) {
         super.init(frame: frame)
        
         dataArray = data
-        for _ in 0...data.count
-        {
-         hadAnswerArray.append("0")
-        }
         creatScrollViewWithFrame(frame)
         creatTableViewWithFrame(frame)
         creatFootViewWithFrame(frame)
@@ -108,7 +105,6 @@ class TestScrollView: UIView {
     footBtn = UIButton(frame: CGRectMake( 50 , 10, width, 40))
      footBtn!.backgroundColor = bgcolor
      footBtn!.setTitle("查看答案", forState: .Normal)
-     footBtn!.setTitle("下一个", forState: .Selected)
      footBtn!.setTitleColor(UIColor.whiteColor(), forState: .Normal)
      footBtn!.addTarget(self, action: #selector(TestScrollView.footButtonClick), forControlEvents: UIControlEvents.TouchUpInside)
      footview?.addSubview(footBtn!)
@@ -353,18 +349,18 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         rightCell.answerStatusImage.hidden = false
         if answerIndexpath == indexPath.row
         {
-         
          chooseCell.answerStatusImage.image = UIImage(named: "right")
         //正确加一
-         rightNum += 1
+        rightNum += 1
+        footBtn!.setTitle("答对！☞滑动进入下一题", forState: .Selected)
         }
         else
         {
         //错误加一
             wrongNum += 1
          chooseCell.answerStatusImage.image = UIImage(named: "wrong")
-         
          rightCell.answerStatusImage.image = UIImage(named: "right")
+         footBtn!.setTitle("错了哦~ ☞滑动进入下一题", forState: .Selected)
         }
 
         

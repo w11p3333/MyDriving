@@ -69,6 +69,7 @@ class DataBaseManager: NSObject {
                 }
                 
             case .subChapter:
+                
                 let sql = "select serial,sid,sname,pid,scount from secondlevel"
                 let result = dataBase!.executeQuery(sql, withArgumentsInArray: nil)
                 while result!.next() {

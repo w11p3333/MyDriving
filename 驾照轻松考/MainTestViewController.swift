@@ -27,9 +27,16 @@ class MainTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        if type == 5
+        {
+         self.title = "全真考试"
+        }
+        else
+        {
+        self.title = "练习模式"
+        }
         
-        loadData()
+        loadDataByType()
 
         //改变按钮
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_home_up"), style: .Plain, target: self, action: #selector(MainTestViewController.back))
@@ -42,7 +49,7 @@ class MainTestViewController: UIViewController {
     
 
     
-    func loadData()
+    func loadDataByType()
     {
         switch type {
         case 1:
@@ -61,22 +68,14 @@ class MainTestViewController: UIViewController {
             questionArray = DataBaseManager.shareManager().getData(.answer)
             
         case 3:
-            let array = DataBaseManager.shareManager().getData(.answer)
-            var dataArr = [AnyObject]()
-            questionArray.append(array)
-            for _ in 0...questionArray.count
-            {
-               let index = Int(arc4random())%questionArray.count
-               dataArr.append(questionArray[index])
-               questionArray.removeAtIndex(index)
-                
-            }
+            questionArray = DataBaseManager.shareManager().getData(.answer)
+
         case 4:
             let array = DataBaseManager.shareManager().getData(.answer)
             for i in 0...array.count - 1
             {
                 let model = array[i] as! Answer
-                if Int(model.pid!)! == number + 1
+                if Int(model.sid!)! == number + 1
                 {
                     questionArray.append(model)
                 }

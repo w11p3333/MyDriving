@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>576888FEB60143D671251DCAAC5498E7</key>
+		<key>56CF6EAF9EBA9C102F2AA2D176DF0B2C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5F7DEF2BA5F12F54BB459FEC83449AEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AE9A3DBFAFF3DFABF790098220B101E</key>
+		<key>9060A820E09DC4EE9A3BD5A32723B223</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC8FB0B0F00AEB486994407F2E84541F</key>
+		<key>C2DEFB7DB18D4DAB11B90271BA2CE920</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC2CC3C505F4B689E4CE5F34126C6DC8</key>
+		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

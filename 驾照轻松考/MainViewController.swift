@@ -56,20 +56,21 @@ class MainViewController: YZDisplayViewController {
 
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let one = sb.instantiateViewControllerWithIdentifier("HomeViewController")
-        one.title = "科目一"
+        one.title = "做题"
         addChildViewController(one)
         let sb2 = UIStoryboard(name: "Main", bundle: nil)
-        let two = sb2.instantiateViewControllerWithIdentifier("SubjectTwoVc")
-        two.title = "科目二"
-        addChildViewController(two)
-        let sb3 = UIStoryboard(name: "Main", bundle: nil)
-        let three = sb3.instantiateViewControllerWithIdentifier("SubjectThreeVc")
-        three.title = "科目三"
-        addChildViewController(three)
-        let sb4 = UIStoryboard(name: "Main", bundle: nil)
-        let chart = sb4.instantiateViewControllerWithIdentifier("MyChartsVc")
+        let chart = sb2.instantiateViewControllerWithIdentifier("MyChartsVc")
         chart.title = "统计"
-        addChildViewController(chart)
+           addChildViewController(chart)
+        let sb3 = UIStoryboard(name: "Main", bundle: nil)
+        let video = sb3.instantiateViewControllerWithIdentifier("SubjectTwoVc")
+        video.title = "视频"
+        addChildViewController(video)
+        let sb4 = UIStoryboard(name: "Main", bundle: nil)
+        let book = sb4.instantiateViewControllerWithIdentifier("SubjectThreeVc")
+        book.title = "拿本"
+        addChildViewController(book)
+     
 
     }
   
