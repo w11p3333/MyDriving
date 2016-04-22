@@ -9,7 +9,9 @@
 import UIKit
 
 
-
+var finishedNumInExam:Int = 0
+var wrongNumInExam:Int = 0
+var rightNumInExam:Int = 0
 
 class MainTestViewController: UIViewController {
 
@@ -23,13 +25,14 @@ class MainTestViewController: UIViewController {
     
     var number:Int = 0
     
-
+  var alert:UIAlertController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if type == 5
         {
-         self.title = "全真考试"
+        setupNavigation()
         }
         else
         {
@@ -47,6 +50,19 @@ class MainTestViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func setupNavigation()
+    {
+    
+        self.navigationController?.title = "全真考试"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "交卷", style: .Plain, target: self, action: "handExam")
+       
+        let label = UILabel(frame:  CGRectMake(0, 10, 80, 30))
+        label.text = "60:00"
+        label.textColor = UIColor.redColor()
+        self.navigationItem.titleView = label
+        testScrollView?.footview?.hidden = true
+    
+    }
 
     
     func loadDataByType()
@@ -81,48 +97,26 @@ class MainTestViewController: UIViewController {
                 }
             }
         case 5:
-//            let array = DataBaseManager.shareManager().getData(.answer)
-//            for i in 0...array.count - 1
-//            {
-//                let model = array[i] as! Answer
-//                if Int(model.pid!)! == number + 1
-//                {
-//                    questionArray.append(model)
-//                }
-//            }
+
+            var examArr = [AnyObject]()
+            let arr = DataBaseManager.shareManager().getData(.answer)
+            examArr.appendContentsOf(arr)
+            for _ in 0...99
+            {
+             let index = Int(arc4random())%(examArr.count)
+             questionArray.append(examArr[index])
+             examArr.removeAtIndex(index)
+            }
+
             print("等等再说")
         case 6:
-//            let array = DataBaseManager.shareManager().getData(.answer)
-//            for i in 0...array.count - 1
-//            {
-//                let model = array[i] as! Answer
-//                if Int(model.pid!)! == number + 1
-//                {
-//                    questionArray.append(model)
-//                }
-//            }
+
              print("等等再说")
         case 7:
-//            let array = DataBaseManager.shareManager().getData(.answer)
-//            for i in 0...array.count - 1
-//            {
-//                let model = array[i] as! Answer
-//                if Int(model.pid!)! == number + 1
-//                {
-//                    questionArray.append(model)
-//                }
-//            }
+
              print("等等再说")
         case 8:
-//            let array = DataBaseManager.shareManager().getData(.answer)
-//            for i in 0...array.count - 1
-//            {
-//                let model = array[i] as! Answer
-//                if Int(model.pid!)! == number + 1
-//                {
-//                    questionArray.append(model)
-//                }
-//            }
+
             print("等等再说")
         default:
             print("等等再说")
@@ -141,8 +135,57 @@ class MainTestViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setInteger(wrongNum, forKey: "wrongNum")
         NSUserDefaults.standardUserDefaults().setInteger(currentPage, forKey: "currentPage")
         print("保存数据成功")
+        
+        
+        if type == 5
+        {
+            alert = UIAlertController(title: "还在考试中,你确定要退出吗？", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+            let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+            let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (action) in
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                }
+        
+            alert.addAction(cancelAction)
+            alert.addAction(okAction)
+             self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        else
+        {
         self.navigationController?.popViewControllerAnimated(true)
-
+        }
+    }
+    //交卷
+    func handExam()
+    {
+      
+        if finishedNumInExam == 100
+        { alert = UIAlertController(title: "已作答完毕！你确定要交卷吗", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        }
+        else
+        {
+            
+            alert = UIAlertController(title: "还有\(100 - finishedNumInExam)题未完成,你确定要交卷吗", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+         
+        }
+        
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (action) in
+            //交卷
+//            wrongNumInExam
+//            rightNumInExam
+            print(wrongNumInExam)
+            print(rightNumInExam)
+        }
+        
+            alert.addAction(cancelAction)
+            alert.addAction(okAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        
+ 
+    
+        
     }
 
 }

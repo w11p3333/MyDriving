@@ -82,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func  setupUI()
     {
+        
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
         

@@ -18,7 +18,11 @@ class MainViewController: YZDisplayViewController {
         setupTitle()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings_icon_account"), style: .Plain, target: self, action: #selector(MainViewController.LeftMenuClick))
-       
+        let label = UILabel(frame: CGRectMake(0,0,80,20))
+        label.text = "驾照轻松考"
+        label.textColor = UIColor.whiteColor()
+        label.font = UIFont.systemFontOfSize(17, weight: UIFontWeightThin)
+        self.navigationItem.titleView = label
     }
 
     /**
@@ -26,8 +30,6 @@ class MainViewController: YZDisplayViewController {
      */
     func setupTitle()
     {
-        
-        title = "驾照轻松考"
         isShowUnderLine = true
         underLineColor = bgcolor
         isShowTitleGradient = true
@@ -43,17 +45,13 @@ class MainViewController: YZDisplayViewController {
         endG = 142 / 255.0
         endB = 115 / 255.0
         titleScrollViewColor = UIColor(white: 0.91, alpha: 0.99)
-      
-        
-        
-       
+    
     }
     /**
      添加子控制器
      */
     func setupAllControllers()
     {
-
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let one = sb.instantiateViewControllerWithIdentifier("HomeViewController")
         one.title = "做题"
@@ -70,8 +68,6 @@ class MainViewController: YZDisplayViewController {
         let book = sb4.instantiateViewControllerWithIdentifier("bookTipsVc")
         book.title = "拿本"
         addChildViewController(book)
-     
-
     }
   
     func LeftMenuClick()

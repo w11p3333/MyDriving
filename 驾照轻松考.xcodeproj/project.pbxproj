@@ -22,6 +22,7 @@
 		B252C0AB1CCA259100CBBB68 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252C0AA1CCA259100CBBB68 /* CollectionHeaderView.swift */; };
 		B252C0AD1CCA409100CBBB68 /* CollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252C0AC1CCA409100CBBB68 /* CollectionFooterView.swift */; };
 		B252C0AF1CCA4F6900CBBB68 /* shipin.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B252C0AE1CCA4DC500CBBB68 /* shipin.mp4 */; };
+		B252C0B11CCA6EFE00CBBB68 /* SimulationExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252C0B01CCA6EFE00CBBB68 /* SimulationExamViewController.swift */; };
 		B2D43F2A1CC3CDFC003519EC /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F291CC3CDFC003519EC /* DataBaseManager.swift */; };
 		B2D43F2C1CC3D141003519EC /* SubjectName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F2B1CC3D141003519EC /* SubjectName.swift */; };
 		B2D43F2E1CC3D164003519EC /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F2D1CC3D164003519EC /* Answer.swift */; };
@@ -91,6 +92,7 @@
 		B252C0AA1CCA259100CBBB68 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		B252C0AC1CCA409100CBBB68 /* CollectionFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionFooterView.swift; sourceTree = "<group>"; };
 		B252C0AE1CCA4DC500CBBB68 /* shipin.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = shipin.mp4; sourceTree = "<group>"; };
+		B252C0B01CCA6EFE00CBBB68 /* SimulationExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulationExamViewController.swift; sourceTree = "<group>"; };
 		B2D43F291CC3CDFC003519EC /* DataBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		B2D43F2B1CC3D141003519EC /* SubjectName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectName.swift; sourceTree = "<group>"; };
 		B2D43F2D1CC3D164003519EC /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				B23E08471CC3B42E00AA0C95 /* ChooseTestTableViewController.swift */,
 				B2D43F331CC3E46F003519EC /* ChooseChapterTableViewController.swift */,
 				B2D43F411CC4A2EA003519EC /* MainTestViewController.swift */,
+				B252C0B01CCA6EFE00CBBB68 /* SimulationExamViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				B2D43F2A1CC3CDFC003519EC /* DataBaseManager.swift in Sources */,
 				B24AA18B1CC6738D001B67D3 /* NJKWebViewProgressView.m in Sources */,
 				B2D43F421CC4A2EA003519EC /* MainTestViewController.swift in Sources */,
+				B252C0B11CCA6EFE00CBBB68 /* SimulationExamViewController.swift in Sources */,
 				B2D43F361CC46CB4003519EC /* UIColor+Extension.swift in Sources */,
 				B2D43F601CC4D9B6003519EC /* MainViewController.swift in Sources */,
 			);
@@ -757,7 +761,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "驾照轻松考/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -771,7 +775,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "驾照轻松考/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "llx.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";

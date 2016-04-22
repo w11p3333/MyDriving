@@ -53,6 +53,7 @@ class ChooseChapterTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ChooseChatperCell", forIndexPath: indexPath) as! ChooseChapterTableViewCell
+        cell.backgroundColor = bgGrayColor
         //章节练习
         if chapterType == 1
         {

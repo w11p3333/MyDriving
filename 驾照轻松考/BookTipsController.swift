@@ -20,6 +20,7 @@ class BookTipsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = bgGrayColor
         tableView.rowHeight = 180
         tableView.delegate = self
         tableView.dataSource = self

@@ -46,6 +46,9 @@ class TestScrollView: UIView {
     init(frame: CGRect,data: [AnyObject]) {
         super.init(frame: frame)
        
+        
+        
+        
         dataArray = data
         creatScrollViewWithFrame(frame)
         creatTableViewWithFrame(frame)
@@ -340,6 +343,7 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         
         //计算做题数
         finishedNum += 1
+        finishedNumInExam += 1
         //出现按钮
         self.footview?.hidden = false
         //已选择答案
@@ -352,12 +356,14 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
          chooseCell.answerStatusImage.image = UIImage(named: "right")
         //正确加一
         rightNum += 1
+        rightNumInExam += 1
         footBtn!.setTitle("答对！☞滑动进入下一题", forState: .Selected)
         }
         else
         {
         //错误加一
             wrongNum += 1
+            wrongNumInExam += 1
          chooseCell.answerStatusImage.image = UIImage(named: "wrong")
          rightCell.answerStatusImage.image = UIImage(named: "right")
          footBtn!.setTitle("错了哦~ ☞滑动进入下一题", forState: .Selected)

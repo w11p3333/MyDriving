@@ -22,7 +22,7 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        view.backgroundColor = bgGrayColor
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = bgGrayColor
@@ -31,8 +31,6 @@ class VideoViewController: UIViewController {
     }
 
   
-  
-
 }
 
 
@@ -63,20 +61,14 @@ extension VideoViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-   
-        
-       
+    
         let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "CollectionHeaderView", forIndexPath: indexPath) as! CollectionHeaderView
         let label = UILabel(frame:CGRectMake(8, 0, 100, 20))
         label.text =  "科目二"
         label.textColor = bgcolor
         header.addSubview(label)
         return header
-       
-      
     }
-    
-    
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let path = NSBundle.mainBundle().pathForResource("shipin", ofType: "mp4")

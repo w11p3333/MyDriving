@@ -12,6 +12,8 @@ import SDCycleScrollView
 
 class HomeViewController: UIViewController {
 
+ 
+    @IBOutlet weak var teamView: UIView!
     
     @IBOutlet weak var totalNumLabel: UILabel!
     
@@ -28,7 +30,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        teamView.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.teamViewClick))
+        teamView.addGestureRecognizer(tap)
         //label数据
         let totalNum = DataBaseManager.shareManager().getData(.answer).count
         totalNumLabel.text = String(totalNum)
@@ -72,5 +76,12 @@ class HomeViewController: UIViewController {
         let vc = RxWebViewController(url: NSURL(string: "http://info.jxedt.com/"))
         self.navigationController?.pushViewController(vc, animated: true)
 
+    }
+    
+    
+    func teamViewClick()
+    {
+    
+     print("点击论坛")
     }
 }

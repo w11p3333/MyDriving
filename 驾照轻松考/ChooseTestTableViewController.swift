@@ -20,7 +20,7 @@ class ChooseTestTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
- 
+        
         self.tableView.tableFooterView = UIView()
         self.tableView.rowHeight = 100
     }
@@ -36,7 +36,7 @@ class ChooseTestTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ChooseTestCell", forIndexPath: indexPath)
-
+        cell.backgroundColor = bgGrayColor
         cell.imageView?.image = UIImage(named: chooseTestImageData[indexPath.row])
         cell.textLabel?.text = chooseTestNameData[indexPath.row]
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
@@ -74,8 +74,7 @@ class ChooseTestTableViewController: UITableViewController {
         //考试
         case 3:
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewControllerWithIdentifier("MainTestVc") as! MainTestViewController
-            vc.type = 5
+            let vc = sb.instantiateViewControllerWithIdentifier("SimulationExamVc") as! SimulationExamViewController
             self.navigationController?.pushViewController(vc, animated: true)
 
      
