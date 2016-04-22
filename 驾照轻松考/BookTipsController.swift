@@ -8,7 +8,7 @@
 
 import UIKit
 
-class bookTipsController: UIViewController {
+class BookTipsController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,7 +30,7 @@ class bookTipsController: UIViewController {
 
   
 }
-extension bookTipsController:UITableViewDelegate, UITableViewDataSource
+extension BookTipsController :UITableViewDelegate, UITableViewDataSource
 {
  
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

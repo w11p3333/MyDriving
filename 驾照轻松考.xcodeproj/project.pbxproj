@@ -18,6 +18,10 @@
 		B252C0A21CC9CD2F00CBBB68 /* BookTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252C0A11CC9CD2F00CBBB68 /* BookTipsTableViewCell.swift */; };
 		B252C0A41CC9FECA00CBBB68 /* BookTipsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252C0A31CC9FECA00CBBB68 /* BookTipsDetailViewController.swift */; };
 		B252C0A71CCA011300CBBB68 /* TipsText.json in Resources */ = {isa = PBXBuildFile; fileRef = B252C0A61CCA011300CBBB68 /* TipsText.json */; };
+		B252C0A91CCA1B1E00CBBB68 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252C0A81CCA1B1E00CBBB68 /* VideoCollectionViewCell.swift */; };
+		B252C0AB1CCA259100CBBB68 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252C0AA1CCA259100CBBB68 /* CollectionHeaderView.swift */; };
+		B252C0AD1CCA409100CBBB68 /* CollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252C0AC1CCA409100CBBB68 /* CollectionFooterView.swift */; };
+		B252C0AF1CCA4F6900CBBB68 /* shipin.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B252C0AE1CCA4DC500CBBB68 /* shipin.mp4 */; };
 		B2D43F2A1CC3CDFC003519EC /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F291CC3CDFC003519EC /* DataBaseManager.swift */; };
 		B2D43F2C1CC3D141003519EC /* SubjectName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F2B1CC3D141003519EC /* SubjectName.swift */; };
 		B2D43F2E1CC3D164003519EC /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F2D1CC3D164003519EC /* Answer.swift */; };
@@ -37,7 +41,7 @@
 		B2D43F5E1CC4D96F003519EC /* YZFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F5A1CC4D96F003519EC /* YZFlowLayout.m */; };
 		B2D43F601CC4D9B6003519EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F5F1CC4D9B6003519EC /* MainViewController.swift */; };
 		B2D43F661CC4DB40003519EC /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F651CC4DB40003519EC /* VideoViewController.swift */; };
-		B2D43F681CC4DB4D003519EC /* bookTipsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F671CC4DB4D003519EC /* bookTipsController.swift */; };
+		B2D43F681CC4DB4D003519EC /* BookTipsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F671CC4DB4D003519EC /* BookTipsController.swift */; };
 		B2D43F6A1CC4DB56003519EC /* MyChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D43F691CC4DB56003519EC /* MyChartsViewController.swift */; };
 		B2E41F531CC29A4F006C541F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41F521CC29A4F006C541F /* AppDelegate.swift */; };
 		B2E41F581CC29A4F006C541F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E41F561CC29A4F006C541F /* Main.storyboard */; };
@@ -83,6 +87,10 @@
 		B252C0A11CC9CD2F00CBBB68 /* BookTipsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTipsTableViewCell.swift; sourceTree = "<group>"; };
 		B252C0A31CC9FECA00CBBB68 /* BookTipsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTipsDetailViewController.swift; sourceTree = "<group>"; };
 		B252C0A61CCA011300CBBB68 /* TipsText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TipsText.json; sourceTree = "<group>"; };
+		B252C0A81CCA1B1E00CBBB68 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		B252C0AA1CCA259100CBBB68 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		B252C0AC1CCA409100CBBB68 /* CollectionFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionFooterView.swift; sourceTree = "<group>"; };
+		B252C0AE1CCA4DC500CBBB68 /* shipin.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = shipin.mp4; sourceTree = "<group>"; };
 		B2D43F291CC3CDFC003519EC /* DataBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		B2D43F2B1CC3D141003519EC /* SubjectName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectName.swift; sourceTree = "<group>"; };
 		B2D43F2D1CC3D164003519EC /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
@@ -108,7 +116,7 @@
 		B2D43F5A1CC4D96F003519EC /* YZFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZFlowLayout.m; sourceTree = "<group>"; };
 		B2D43F5F1CC4D9B6003519EC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B2D43F651CC4DB40003519EC /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		B2D43F671CC4DB4D003519EC /* bookTipsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bookTipsController.swift; sourceTree = "<group>"; };
+		B2D43F671CC4DB4D003519EC /* BookTipsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTipsController.swift; sourceTree = "<group>"; };
 		B2D43F691CC4DB56003519EC /* MyChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChartsViewController.swift; sourceTree = "<group>"; };
 		B2E41F4F1CC29A4F006C541F /* 驾照轻松考.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "驾照轻松考.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E41F521CC29A4F006C541F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,14 +186,14 @@
 			path = NJKWebViewProgress;
 			sourceTree = "<group>";
 		};
-		B2D43F1F1CC3CD5F003519EC /* Subjectone */ = {
+		B2D43F1F1CC3CD5F003519EC /* Test */ = {
 			isa = PBXGroup;
 			children = (
 				B2D43F221CC3CD8D003519EC /* Model */,
 				B2D43F211CC3CD87003519EC /* View */,
 				B2D43F201CC3CD80003519EC /* Controller */,
 			);
-			name = Subjectone;
+			name = Test;
 			sourceTree = "<group>";
 		};
 		B2D43F201CC3CD80003519EC /* Controller */ = {
@@ -223,6 +231,7 @@
 		B2D43F231CC3CD9A003519EC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B252C0AE1CCA4DC500CBBB68 /* shipin.mp4 */,
 				B24AA17C1CC6738D001B67D3 /* RxWebViewController */,
 				B2D43F511CC4D96F003519EC /* YZDisplayViewController */,
 				B2D43F311CC3D82F003519EC /* data.sqlite */,
@@ -270,6 +279,9 @@
 			isa = PBXGroup;
 			children = (
 				B2D43F651CC4DB40003519EC /* VideoViewController.swift */,
+				B252C0A81CCA1B1E00CBBB68 /* VideoCollectionViewCell.swift */,
+				B252C0AA1CCA259100CBBB68 /* CollectionHeaderView.swift */,
+				B252C0AC1CCA409100CBBB68 /* CollectionFooterView.swift */,
 			);
 			name = Video;
 			sourceTree = "<group>";
@@ -277,7 +289,7 @@
 		B2D43F621CC4DB0D003519EC /* BookTips */ = {
 			isa = PBXGroup;
 			children = (
-				B2D43F671CC4DB4D003519EC /* bookTipsController.swift */,
+				B2D43F671CC4DB4D003519EC /* BookTipsController.swift */,
 				B252C0A11CC9CD2F00CBBB68 /* BookTipsTableViewCell.swift */,
 				B252C0A31CC9FECA00CBBB68 /* BookTipsDetailViewController.swift */,
 			);
@@ -326,13 +338,13 @@
 			isa = PBXGroup;
 			children = (
 				B2D43F6B1CC52091003519EC /* LeftMenu */,
+				B2D43F1F1CC3CD5F003519EC /* Test */,
 				B2D43F631CC4DB15003519EC /* MyCharts */,
 				B2D43F621CC4DB0D003519EC /* BookTips */,
 				B2D43F611CC4DAFE003519EC /* Video */,
 				B2D43F271CC3CDBB003519EC /* Main */,
 				B2D43F261CC3CDB6003519EC /* Tools */,
 				B2D43F231CC3CD9A003519EC /* Resource */,
-				B2D43F1F1CC3CD5F003519EC /* Subjectone */,
 				B2E41F521CC29A4F006C541F /* AppDelegate.swift */,
 				B2E41F561CC29A4F006C541F /* Main.storyboard */,
 				B2E41F591CC29A4F006C541F /* Assets.xcassets */,
@@ -487,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B252C0AF1CCA4F6900CBBB68 /* shipin.mp4 in Resources */,
 				B2D43F321CC3DA5F003519EC /* data.sqlite in Resources */,
 				B2E41F5D1CC29A4F006C541F /* LaunchScreen.storyboard in Resources */,
 				B252C0A71CCA011300CBBB68 /* TipsText.json in Resources */,
@@ -578,13 +591,16 @@
 				B252C0A21CC9CD2F00CBBB68 /* BookTipsTableViewCell.swift in Sources */,
 				B2D43F3A1CC4768A003519EC /* TestScrollView.swift in Sources */,
 				B2D43F5C1CC4D96F003519EC /* YZDisplayTitleLabel.m in Sources */,
+				B252C0AD1CCA409100CBBB68 /* CollectionFooterView.swift in Sources */,
 				B2D43F301CC3D186003519EC /* SubChapter.swift in Sources */,
 				B252C0A41CC9FECA00CBBB68 /* BookTipsDetailViewController.swift in Sources */,
 				B2D43F5B1CC4D96F003519EC /* UIView+Frame.m in Sources */,
+				B252C0AB1CCA259100CBBB68 /* CollectionHeaderView.swift in Sources */,
 				B2D43F381CC46E5B003519EC /* ChooseChapterTableViewCell.swift in Sources */,
 				B24AA18D1CC6738D001B67D3 /* RxWebViewNavigationViewController.m in Sources */,
-				B2D43F681CC4DB4D003519EC /* bookTipsController.swift in Sources */,
+				B2D43F681CC4DB4D003519EC /* BookTipsController.swift in Sources */,
 				B2D43F3D1CC489AF003519EC /* UIChooseAnswerTableViewCell.swift in Sources */,
+				B252C0A91CCA1B1E00CBBB68 /* VideoCollectionViewCell.swift in Sources */,
 				B23E08481CC3B42E00AA0C95 /* ChooseTestTableViewController.swift in Sources */,
 				B2D43F661CC4DB40003519EC /* VideoViewController.swift in Sources */,
 				B24AA18A1CC6738D001B67D3 /* NJKWebViewProgress.m in Sources */,

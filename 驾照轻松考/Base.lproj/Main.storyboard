@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Title-->
@@ -319,8 +320,89 @@
                     <view key="view" contentMode="scaleToFill" id="Weu-zk-dOt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="2" maximumZoomScale="2" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a6E-1b-fXQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f4J-qo-S5f">
+                                    <size key="itemSize" width="181.5" height="145"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="8oe-6F-oZB" customClass="VideoCollectionViewCell" customModule="驾照轻松考" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="181.5" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="181.5" height="145"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aff-9J-aXX">
+                                                    <rect key="frame" x="8" y="8" width="165.5" height="113"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDH-vM-1pM">
+                                                    <rect key="frame" x="145" y="8" width="28.5" height="13.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2R-4m-Go7">
+                                                    <rect key="frame" x="140.5" y="129" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOg-J1-3KS">
+                                                    <rect key="frame" x="8" y="129" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="NOg-J1-3KS" firstAttribute="top" secondItem="aff-9J-aXX" secondAttribute="bottom" constant="8" id="8vd-1A-cGb"/>
+                                            <constraint firstItem="cDH-vM-1pM" firstAttribute="trailing" secondItem="8oe-6F-oZB" secondAttribute="trailingMargin" id="Aca-dj-xhT"/>
+                                            <constraint firstItem="R2R-4m-Go7" firstAttribute="trailing" secondItem="aff-9J-aXX" secondAttribute="trailing" id="Tp6-2X-yIY"/>
+                                            <constraint firstItem="cDH-vM-1pM" firstAttribute="top" secondItem="8oe-6F-oZB" secondAttribute="topMargin" id="cOF-aI-v7j"/>
+                                            <constraint firstItem="aff-9J-aXX" firstAttribute="leading" secondItem="8oe-6F-oZB" secondAttribute="leading" constant="8" id="d1Q-Q8-jlS"/>
+                                            <constraint firstItem="R2R-4m-Go7" firstAttribute="top" secondItem="aff-9J-aXX" secondAttribute="bottom" constant="8" id="hHV-vq-kdL"/>
+                                            <constraint firstItem="R2R-4m-Go7" firstAttribute="bottom" secondItem="8oe-6F-oZB" secondAttribute="bottomMargin" constant="8" id="j3Y-FV-wAt"/>
+                                            <constraint firstItem="aff-9J-aXX" firstAttribute="top" secondItem="8oe-6F-oZB" secondAttribute="top" constant="8" id="lmi-Gz-P9F"/>
+                                            <constraint firstItem="NOg-J1-3KS" firstAttribute="bottom" secondItem="8oe-6F-oZB" secondAttribute="bottomMargin" constant="8" id="tAf-hB-hb7"/>
+                                            <constraint firstAttribute="trailing" secondItem="aff-9J-aXX" secondAttribute="trailing" constant="8" id="x2s-sp-aOG"/>
+                                            <constraint firstItem="NOg-J1-3KS" firstAttribute="leading" secondItem="aff-9J-aXX" secondAttribute="leading" id="zq3-RI-4eb"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="descLabel" destination="NOg-J1-3KS" id="re6-7N-eOh"/>
+                                            <outlet property="image_view" destination="aff-9J-aXX" id="6Xm-4V-zJl"/>
+                                            <outlet property="rightLabel" destination="cDH-vM-1pM" id="NMK-Vi-1Uw"/>
+                                            <outlet property="timeLabel" destination="R2R-4m-Go7" id="yZA-M9-iS9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionHeaderView" id="O9q-ZO-qZA" customClass="CollectionHeaderView" customModule="驾照轻松考" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionFooterView" id="Q3e-iE-kQZ" customClass="CollectionFooterView" customModule="驾照轻松考" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="195" width="600" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="a6E-1b-fXQ" secondAttribute="trailing" id="2Mb-YG-4b9"/>
+                            <constraint firstItem="a6E-1b-fXQ" firstAttribute="leading" secondItem="Weu-zk-dOt" secondAttribute="leading" id="32o-5t-M4H"/>
+                            <constraint firstItem="a6E-1b-fXQ" firstAttribute="top" secondItem="Weu-zk-dOt" secondAttribute="top" id="cbw-S5-Kvp"/>
+                            <constraint firstItem="GSA-3v-Sz3" firstAttribute="top" secondItem="a6E-1b-fXQ" secondAttribute="bottom" id="ypv-Gw-oZl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="a6E-1b-fXQ" id="Ig9-7h-ROx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9m-hf-Ep6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -491,7 +573,7 @@
         <!--Book Tips Controller-->
         <scene sceneID="s4J-hE-qGK">
             <objects>
-                <viewController storyboardIdentifier="bookTipsVc" id="r1g-Qs-Yul" customClass="bookTipsController" customModule="驾照轻松考" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bookTipsVc" id="r1g-Qs-Yul" customClass="BookTipsController" customModule="驾照轻松考" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yUZ-EU-vJ4"/>
                         <viewControllerLayoutGuide type="bottom" id="rKR-xj-d0M"/>
