@@ -63,11 +63,11 @@ class MainViewController: YZDisplayViewController {
         chart.title = "统计"
            addChildViewController(chart)
         let sb3 = UIStoryboard(name: "Main", bundle: nil)
-        let video = sb3.instantiateViewControllerWithIdentifier("SubjectTwoVc")
+        let video = sb3.instantiateViewControllerWithIdentifier("videoVc")
         video.title = "视频"
         addChildViewController(video)
         let sb4 = UIStoryboard(name: "Main", bundle: nil)
-        let book = sb4.instantiateViewControllerWithIdentifier("SubjectThreeVc")
+        let book = sb4.instantiateViewControllerWithIdentifier("bookTipsVc")
         book.title = "拿本"
         addChildViewController(book)
      

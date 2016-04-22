@@ -135,6 +135,12 @@ class MainTestViewController: UIViewController {
   
     func back()
     {
+        //保存数据
+        NSUserDefaults.standardUserDefaults().setInteger(finishedNum, forKey: "finishedNum")
+        NSUserDefaults.standardUserDefaults().setInteger(rightNum, forKey: "rightNum")
+        NSUserDefaults.standardUserDefaults().setInteger(wrongNum, forKey: "wrongNum")
+        NSUserDefaults.standardUserDefaults().setInteger(currentPage, forKey: "currentPage")
+        print("保存数据成功")
         self.navigationController?.popViewControllerAnimated(true)
 
     }

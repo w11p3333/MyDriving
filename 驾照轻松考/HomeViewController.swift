@@ -52,23 +52,24 @@ class HomeViewController: UIViewController {
 
     @IBAction func oneBtnClick(sender: AnyObject) {
         
-        let vc = RxWebViewController(url: NSURL(string: "http://mnks.jxedt.com/ckm4/"))
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DetailVc") as! BookTipsDetailViewController
+        vc.type = 3
         self.navigationController?.pushViewController(vc, animated: true)
     }
  
     @IBAction func twoBtnClick(sender: AnyObject) {
-        let vc = RxWebViewController(url: NSURL(string: "http://mnks.jxedt.com/ckm4/"))
+        let vc = RxWebViewController(url: NSURL(string: "http://jiaxiao.jxedt.com/"))
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func threeBtnClick(sender: AnyObject) {
-        let vc = RxWebViewController(url: NSURL(string: "http://mnks.jxedt.com/ckm4/"))
+        let vc = RxWebViewController(url: NSURL(string: "http://zhinan.jxedt.com/index_33_1.htm"))
         self.navigationController?.pushViewController(vc, animated: true)
 
     }
 
     @IBAction func fourBtnClick(sender: AnyObject) {
-        let vc = RxWebViewController(url: NSURL(string: "http://mnks.jxedt.com/ckm4/"))
+        let vc = RxWebViewController(url: NSURL(string: "http://info.jxedt.com/"))
         self.navigationController?.pushViewController(vc, animated: true)
 
     }

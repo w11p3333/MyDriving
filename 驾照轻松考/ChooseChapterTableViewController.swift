@@ -68,7 +68,7 @@ class ChooseChapterTableViewController: UITableViewController {
         }
         cell.chapterName.numberOfLines = 0
         cell.chapterName.lineBreakMode = NSLineBreakMode.ByCharWrapping
-        cell.chapterNum.backgroundColor = UIColor.randomColor()
+        cell.chapterNum.backgroundColor = colors[Int(arc4random_uniform(5))]
         cell.chapterNum.clipsToBounds = true
         cell.chapterNum.layer.cornerRadius = 10
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator

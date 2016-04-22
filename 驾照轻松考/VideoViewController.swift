@@ -1,5 +1,5 @@
 //
-//  SubjectThreeViewController.swift
+//  SubjectTwoViewController.swift
 //  驾照轻松考
 //
 //  Created by 卢良潇 on 16/4/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubjectThreeViewController: UIViewController {
+class VideoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
