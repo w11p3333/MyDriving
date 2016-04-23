@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var startBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //小组按钮
         teamView.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.teamViewClick))
         teamView.addGestureRecognizer(tap)
@@ -81,7 +81,8 @@ class HomeViewController: UIViewController {
     
     func teamViewClick()
     {
-    
-     print("点击论坛")
+    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("teamVc") as! TeamViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+     
     }
 }

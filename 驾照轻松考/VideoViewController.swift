@@ -15,6 +15,7 @@ class VideoViewController: UIViewController {
 
     var playViewController = AVPlayerViewController()
     var playerView = AVPlayer()
+   
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -22,7 +23,6 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = bgGrayColor
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = bgGrayColor

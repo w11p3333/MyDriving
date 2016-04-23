@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Launch" id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
@@ -17,26 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage-700" translatesAutoresizingMaskIntoConstraints="NO" id="Q1i-f5-ay7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="你离老司机只有一个APP的距离" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZW-Xk-Mhm">
+                                <rect key="frame" x="69" y="408" width="236" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="Xks-vA-MDA">
+                                <rect key="frame" x="112" y="170" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="AYz-kC-rz4"/>
+                                    <constraint firstAttribute="height" constant="150" id="baH-rn-WWb"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="驾照.轻松考" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDJ-vd-fC5">
+                                <rect key="frame" x="93" y="337" width="189" height="63"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.16078431372549018" green="0.61568627450980395" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Q1i-f5-ay7" secondAttribute="trailing" id="1Ti-Ve-VbU"/>
-                            <constraint firstItem="Q1i-f5-ay7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="75j-u2-dZA"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Q1i-f5-ay7" secondAttribute="bottom" id="Hfi-56-ptp"/>
-                            <constraint firstItem="Q1i-f5-ay7" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="UJy-dk-h2J"/>
+                            <constraint firstItem="Xks-vA-MDA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0x0-TI-FPU"/>
+                            <constraint firstItem="XDJ-vd-fC5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DgJ-Jf-QWd"/>
+                            <constraint firstItem="rZW-Xk-Mhm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hpq-Q5-D2T"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="85.5" y="330.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchImage-700" width="320" height="480"/>
+        <image name="car" width="202" height="200"/>
     </resources>
 </document>

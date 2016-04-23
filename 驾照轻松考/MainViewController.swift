@@ -11,6 +11,30 @@ import KGFloatingDrawer
 
 class MainViewController: YZDisplayViewController {
 
+    
+    //launchScreen淡入效果
+    private func launchAnimation()
+    {
+        
+        let vc = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateViewControllerWithIdentifier("Launch")
+        let launchview = vc.view
+        let delegate = UIApplication.sharedApplication().delegate
+        let mainWindow = delegate?.window
+        mainWindow!!.addSubview(launchview)
+        
+        
+        UIView.animateWithDuration(1, delay: 0.5, options: UIViewAnimationOptions.BeginFromCurrentState, animations: {
+            launchview.alpha = 0.0
+            launchview.layer.transform = CATransform3DScale(CATransform3DIdentity, 1.5, 1.5, 1.0)
+        }) { (finished) in
+            launchview.removeFromSuperview()
+        }
+        
+        
+        
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,11 +42,22 @@ class MainViewController: YZDisplayViewController {
         setupTitle()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings_icon_account"), style: .Plain, target: self, action: #selector(MainViewController.LeftMenuClick))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings_icon_notification"), style: .Plain, target: self, action: "notificationClick")
         let label = UILabel(frame: CGRectMake(0,0,80,20))
         label.text = "驾照轻松考"
         label.textColor = UIColor.whiteColor()
         label.font = UIFont.systemFontOfSize(17, weight: UIFontWeightThin)
         self.navigationItem.titleView = label
+    }
+    
+    static var once:dispatch_once_t = 0
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        dispatch_once(&MainViewController.once) {
+            self.launchAnimation()
+        }
+        
     }
 
     /**
@@ -80,4 +115,11 @@ class MainViewController: YZDisplayViewController {
     }
 
 
+    func notificationClick()
+    {
+    
+        let vc = UIStoryboard(name:"Main", bundle: nil).instantiateViewControllerWithIdentifier("notificationVc")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }
