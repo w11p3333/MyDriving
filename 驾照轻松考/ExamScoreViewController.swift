@@ -27,7 +27,7 @@ class ExamScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.title = "发表成绩"
         scoreLabel.text = String(score)
         scoreDescLabel.text = score > 90 ? "欢迎老司机的诞生。" : ":前面的老司机带带我..."
         
@@ -55,8 +55,6 @@ class ExamScoreViewController: UIViewController {
         view.layer.shadowOpacity = 0.8
         view.layer.shadowRadius = 10
         view.clipsToBounds = false
-    
-    
     }
     
     

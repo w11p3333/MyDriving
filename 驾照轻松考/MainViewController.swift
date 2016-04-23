@@ -42,7 +42,7 @@ class MainViewController: YZDisplayViewController {
         setupTitle()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings_icon_account"), style: .Plain, target: self, action: #selector(MainViewController.LeftMenuClick))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings_icon_notification"), style: .Plain, target: self, action: "notificationClick")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings_icon_notification"), style: .Plain, target: self, action: #selector(MainViewController.notificationClick))
         let label = UILabel(frame: CGRectMake(0,0,80,20))
         label.text = "驾照轻松考"
         label.textColor = UIColor.whiteColor()
