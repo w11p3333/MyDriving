@@ -15,14 +15,16 @@ var rightNumInExam:Int = 0
 
 class MainTestViewController: UIViewController {
 
+    //关于倒计时
+    var countDownLabel:UILabel?
+    var countDownTime:Int = 60 * 60
+    var timer:NSTimer?
     
     var testScrollView : TestScrollView?
     //题目数据
     var questionArray = [AnyObject]()
     //type=1 章节练习 type=2 顺序练习 type=3 随机练习 type=4 专项练习 type=5 模拟考试（全真） type = 6 模拟考试(先考未答) type = 7 我的错题 type =8 我的收藏
     var type:Int = 0
-    
-    
     var number:Int = 0
     
   var alert:UIAlertController!
@@ -52,19 +54,21 @@ class MainTestViewController: UIViewController {
     
     func setupNavigation()
     {
-    
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(MainTestViewController.countDown), userInfo: nil, repeats: true)
         self.navigationController?.title = "全真考试"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "交卷", style: .Plain, target: self, action: "handExam")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "交卷", style: .Plain, target: self, action: #selector(MainTestViewController.handExam))
        
-        let label = UILabel(frame:  CGRectMake(0, 10, 80, 30))
-        label.text = "60:00"
-        label.textColor = UIColor.redColor()
-        self.navigationItem.titleView = label
+        countDownLabel = UILabel(frame:  CGRectMake(0, 20, 50, 20))
+      
+        countDownLabel!.textColor = UIColor.redColor()
+        self.navigationItem.titleView = countDownLabel
         testScrollView?.footview?.hidden = true
     
     }
 
-    
+    /**
+     根据类型加载数据
+     */
     func loadDataByType()
     {
         switch type {
@@ -126,6 +130,28 @@ class MainTestViewController: UIViewController {
         
     }
 
+    
+    // MARK: 时间方法
+    /**
+     计算倒数计时
+     */
+    func countDown()
+    {
+        countDownLabel?.text = formatTime(countDownTime)
+        countDownTime -= 1
+     
+    }
+    
+    //格式化时间
+    func formatTime(time:Int) -> String
+    {
+        let min = time / 60
+        let second = time % 60
+        let time = String(format: "%02d:%02d", arguments: [min,second])
+        return time
+    }
+
+    //MARK: 点击方法
   
     func back()
     {
@@ -173,10 +199,11 @@ class MainTestViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
         let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (action) in
             //交卷
-//            wrongNumInExam
-//            rightNumInExam
-            print(wrongNumInExam)
-            print(rightNumInExam)
+            
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ExamScoreVc") as! ExamScoreViewController
+            vc.score = rightNumInExam
+            self.navigationController?.pushViewController(vc, animated: true)
+          
         }
         
             alert.addAction(cancelAction)

@@ -33,25 +33,23 @@ class SimulationExamViewController: UIViewController {
 
        UIView.animateWithDuration(0.3, delay: 0.5, options: UIViewAnimationOptions.TransitionNone, animations: {
 
+     
         
-            self.startBtn.layer.setAffineTransform(CGAffineTransformMakeRotation(CGFloat(M_PI)))
+        self.startBtn.layer.setAffineTransform(CGAffineTransformMakeRotation(CGFloat(M_PI)))
+        
+        
         }) { (true) in
-          
+        
+
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewControllerWithIdentifier("MainTestVc") as! MainTestViewController
             vc.type = 5
             let nav = UINavigationController(rootViewController: vc)
-         //   self.presentViewController(vc, animated: true, completion: nil)
             self.navigationController?.presentViewController(nav, animated: true, completion: nil)
         
    
         }
-        
-//            let sb = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = sb.instantiateViewControllerWithIdentifier("MainTestVc") as! MainTestViewController
-//            vc.type = 5
 
-        
     }
     
 

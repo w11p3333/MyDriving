@@ -35,7 +35,8 @@ class TestScrollView: UIView {
     var rightTableView : UITableView?
     var tableFooterView : UIView?
     //进度条长度
-    var progressWidth: Double = 0.0
+    var progressRightWidth: Double = 0.0
+    var progressWrongWidth : Double = 0.0
     //记录是否选择了答案
     var didSelected:Bool = false
     //上次的偏移量
@@ -45,10 +46,7 @@ class TestScrollView: UIView {
     //构造方法
     init(frame: CGRect,data: [AnyObject]) {
         super.init(frame: frame)
-       
-        
-        
-        
+        //传入的数据
         dataArray = data
         creatScrollViewWithFrame(frame)
         creatTableViewWithFrame(frame)
@@ -357,6 +355,7 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         //正确加一
         rightNum += 1
         rightNumInExam += 1
+            progressRightWidth += 1.94
         footBtn!.setTitle("答对！☞滑动进入下一题", forState: .Selected)
         }
         else
@@ -364,6 +363,7 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         //错误加一
             wrongNum += 1
             wrongNumInExam += 1
+            progressWrongWidth += 1.94
          chooseCell.answerStatusImage.image = UIImage(named: "wrong")
          rightCell.answerStatusImage.image = UIImage(named: "right")
          footBtn!.setTitle("错了哦~ ☞滑动进入下一题", forState: .Selected)
@@ -383,6 +383,7 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
     //设置题目
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
        
+        //设置题目数据
         model = getFitModel(tableView)
         
         var str = ""
@@ -398,6 +399,7 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         
         let view = UIView(frame: CGRectMake(0, 0, self.frame.width - 8 , 100))
         
+        
         //进度条
         let progressLabel = UILabel(frame: CGRectMake(8, 8, self.frame.width - 16 , 20))
         progressLabel.backgroundColor = UIColor.whiteColor()
@@ -405,24 +407,33 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         progressLabel.text = "\(progress)"
         progressLabel.font = UIFont.systemFontOfSize(11)
         progressLabel.textAlignment = NSTextAlignment.Center
-        //暂时设定为0.194
-        let backView = UIView(frame: CGRectMake(0, 0, CGFloat(progressWidth) , 20))
-        progressWidth += 0.194
+        
+        //  正确的进度条 暂时设定为0.194
+        let backView = UIView(frame: CGRectMake(0, 0, CGFloat(progressRightWidth) , 20))
+       
         backView.backgroundColor = bgcolor
         let pageLabel = UILabel(frame: CGRectMake(2, 0, 20 , 20))
-        pageLabel.hidden = true
+        pageLabel.hidden = false
         pageLabel.textColor = UIColor.whiteColor()
-        pageLabel.font = UIFont.systemFontOfSize(11)
-        pageLabel.text = "\(currentPage + 1)"
-        if currentPage >= 14
-        {
-            pageLabel.hidden = false
-        }
-        progressLabel.addSubview(pageLabel)
+        pageLabel.font = UIFont.systemFontOfSize(9)
+        pageLabel.text = "\(rightNumInExam + 1)"
         progressLabel.insertSubview(backView, atIndex: 0)
-
-
-
+         progressLabel.addSubview(pageLabel)
+        
+        
+          //错误进度条
+        let progressWrongView = UIView(frame: CGRectMake(CGFloat(progressRightWidth), 0, CGFloat(progressWrongWidth) , 20))
+        progressWrongView.backgroundColor = UIColor.redColor()
+        let wrongLabel = UILabel(frame: CGRectMake(CGFloat(progressRightWidth) + 2, 0, 20 , 20))
+        wrongLabel.textColor = UIColor.whiteColor()
+        wrongLabel.font = UIFont.systemFontOfSize(9)
+        wrongLabel.text = "\(wrongNumInExam + 1)"
+        
+        
+      
+        progressLabel.addSubview(progressWrongView)
+          progressLabel.addSubview(wrongLabel)
+        
         
         
         //题目
@@ -432,6 +443,8 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
    
         label.numberOfLines = 0
         label.lineBreakMode = .ByCharWrapping
+        
+        //添加视图
         view.addSubview(progressLabel)
         view.addSubview(label)
         return view
