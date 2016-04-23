@@ -2,8 +2,8 @@
 [项目]驾照轻松考
 
 ## About
-做题类App    
-主要界面： 
+做题类App/界面参考扇贝单词    
+## Preview 
  
 ![](https://github.com/w11p3333/MyDriving/raw/master/Image/home.png) 
 ![](https://github.com/w11p3333/MyDriving/raw/master/Image/chart.png) 
