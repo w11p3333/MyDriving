@@ -19,11 +19,11 @@ class MainTestViewController: UIViewController {
     var countDownLabel:UILabel?
     var countDownTime:Int = 60 * 60
     var timer:NSTimer?
-    
+    //主视图
     var testScrollView : TestScrollView?
     //题目数据
     var questionArray = [AnyObject]()
-    //type=1 章节练习 type=2 顺序练习 type=3 随机练习 type=4 专项练习 type=5 模拟考试（全真） type = 6 模拟考试(先考未答) type = 7 我的错题 type =8 我的收藏
+    /// 1: 章节练习 2: 顺序练习 3: 专项练习 4: 模拟考试 5: 我的错题 6: 我的收藏
     var type:Int = 0
     var number:Int = 0
     
@@ -31,10 +31,12 @@ class MainTestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if type == 5
+       
+        if type == 4
         {
         setupNavigation()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didFinishedTest:", name: DidFinishedTest, object: nil)
+    
         }
         else
         {
@@ -42,14 +44,16 @@ class MainTestViewController: UIViewController {
         }
         
         loadDataByType()
-
         //改变按钮
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_home_up"), style: .Plain, target: self, action: #selector(MainTestViewController.back))
-
-       
-
+        //加载主界面
         self.view.addSubview(testScrollView!)
         // Do any additional setup after loading the view.
+    }
+    
+    deinit
+    {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func setupNavigation()
@@ -88,9 +92,6 @@ class MainTestViewController: UIViewController {
             questionArray = DataBaseManager.shareManager().getData(.answer)
             
         case 3:
-            questionArray = DataBaseManager.shareManager().getData(.answer)
-
-        case 4:
             let array = DataBaseManager.shareManager().getData(.answer)
             for i in 0...array.count - 1
             {
@@ -100,8 +101,7 @@ class MainTestViewController: UIViewController {
                     questionArray.append(model)
                 }
             }
-        case 5:
-
+        case 4:
             var examArr = [AnyObject]()
             let arr = DataBaseManager.shareManager().getData(.answer)
             examArr.appendContentsOf(arr)
@@ -112,16 +112,8 @@ class MainTestViewController: UIViewController {
              examArr.removeAtIndex(index)
             }
 
-            print("等等再说")
-        case 6:
-
+        case 5:
              print("等等再说")
-        case 7:
-
-             print("等等再说")
-        case 8:
-
-            print("等等再说")
         default:
             print("等等再说")
         }
@@ -137,6 +129,7 @@ class MainTestViewController: UIViewController {
      */
     func countDown()
     {
+        
         countDownLabel?.text = formatTime(countDownTime)
         countDownTime -= 1
      
@@ -163,31 +156,33 @@ class MainTestViewController: UIViewController {
         print("保存数据成功")
         
         
-        if type == 5
+        if type == 4
         {
             alert = UIAlertController(title: "还在考试中,你确定要退出吗？", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
             let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (action) in
                 
-                self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismissViewControllerAnimated(true, completion: nil)
                 }
         
             alert.addAction(cancelAction)
             alert.addAction(okAction)
-             self.presentViewController(alert, animated: true, completion: nil)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         else
         {
-        self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popViewControllerAnimated(true)
         }
     }
+    
     //交卷
     func handExam()
     {
       
         if finishedNumInExam == 100
-        { alert = UIAlertController(title: "已作答完毕！你确定要交卷吗", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        {
+            alert = UIAlertController(title: "已作答完毕！你确定要交卷吗", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         }
         else
         {
@@ -210,9 +205,14 @@ class MainTestViewController: UIViewController {
             alert.addAction(okAction)
             self.presentViewController(alert, animated: true, completion: nil)
         
- 
-    
-        
     }
+    
+    
+    func didFinishedTest(notification:NSNotification)
+    {
+     handExam()
+    
+    }
+
 
 }

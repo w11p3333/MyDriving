@@ -13,8 +13,6 @@ class BookTipsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var BgView: UIView!
    
-    
-   
     @IBOutlet weak var imageBgView: UIView!
 
     @IBOutlet weak var image_view: UIImageView!
@@ -26,8 +24,7 @@ class BookTipsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        BgView.layer.borderWidth = 1
-//        BgView.layer.borderColor = bgcolor.CGColor
+
         // Initialization code
     }
 

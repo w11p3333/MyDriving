@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "99087EFCBD443CE33C0D015B25028BFC37AA8B22",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "99087EFCBD443CE33C0D015B25028BFC37AA8B22" : 0,
+    "CD17E30A199E9BCBB24EF07FE2018912A9B7D354" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8A9EFD72-883F-4037-B41F-F4CB853FD3EB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "99087EFCBD443CE33C0D015B25028BFC37AA8B22" : "%E9%A9%BE%E7%85%A7%E8%BD%BB%E6%9D%BE%E8%80%83\/",
+    "CD17E30A199E9BCBB24EF07FE2018912A9B7D354" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "驾照轻松考",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "驾照轻松考.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/w11p3333\/MyDriving.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "99087EFCBD443CE33C0D015B25028BFC37AA8B22"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/w11p3333\/Pomodoro.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CD17E30A199E9BCBB24EF07FE2018912A9B7D354"
+    }
+  ]
+}

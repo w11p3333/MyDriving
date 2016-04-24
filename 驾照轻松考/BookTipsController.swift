@@ -12,7 +12,7 @@ class BookTipsController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    
+    //数据
     var borderColors = [ UIColor(red: 253/255, green: 143/255, blue: 157/255, alpha: 1.0),UIColor(red: 135/255, green: 206/255, blue: 235/255, alpha: 1.0),UIColor(red: 124/255, green: 205/255, blue: 124/255, alpha: 1.0)]
     var textData = ["驾照年审","驾照换证","驾照遗失"]
     var imageData = ["icon_applet_collins","icon_applet_roots","icon_applet_affixes"]
@@ -20,6 +20,7 @@ class BookTipsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = bgGrayColor
         tableView.rowHeight = 180
         tableView.delegate = self
@@ -40,17 +41,18 @@ extension BookTipsController :UITableViewDelegate, UITableViewDataSource
  
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TipsCell", forIndexPath: indexPath) as! BookTipsTableViewCell
+        //文字
         cell.titleLabel.text = textData[indexPath.row]
         cell.titleLabel.textColor = borderColors[indexPath.row]
         cell.descLabel.text = descData[indexPath.row]
-        
+        //图片
         cell.imageBgView.backgroundColor = borderColors[indexPath.row]
         cell.imageBgView.layer.cornerRadius = 30
         cell.imageBgView.clipsToBounds = true
         cell.image_view.image = UIImage(named: (imageData[indexPath.row]))
         cell.image_view.clipsToBounds = true
         cell.image_view.layer.cornerRadius = 25
-        
+        //边框颜色
         cell.BgView.layer.cornerRadius = 8
         cell.BgView.layer.borderWidth = 2
         cell.BgView.layer.borderColor = borderColors[indexPath.row].CGColor

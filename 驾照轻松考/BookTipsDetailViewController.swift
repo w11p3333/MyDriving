@@ -25,6 +25,7 @@ class BookTipsDetailViewController: UIViewController {
     
     func setTextView()
     {
+        //从JSON读取数据
         let path = NSBundle.mainBundle().pathForResource("TipsText.json", ofType: nil)
         let jsonData = NSData(contentsOfFile: path!)
         let dictarr = try! NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers)

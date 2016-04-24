@@ -71,6 +71,7 @@ extension VideoViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
         let path = NSBundle.mainBundle().pathForResource("shipin", ofType: "mp4")
         playerView = AVPlayer(URL: NSURL(fileURLWithPath: path!))
         playViewController.player = playerView

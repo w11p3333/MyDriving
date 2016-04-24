@@ -15,9 +15,11 @@ protocol TestScrollViewDelegate:NSObjectProtocol {
 }
 
 
-
+let DidFinishedTest = "didFinishedTest"
 class TestScrollView: UIView {
 
+    
+    
     //初始化模型
     var model = Answer()
 
@@ -135,8 +137,6 @@ class TestScrollView: UIView {
     
     func getFitModel(tableview:UITableView) -> Answer
     {
-     
-        
         if tableview == leftTableView && currentPage == 0
         {
             model = dataArray[currentPage] as! Answer
@@ -171,7 +171,6 @@ class TestScrollView: UIView {
     /**
      获取当前题目编号
      */
-    
     func getQuestionNum(tableview:UITableView, currentPage:Int) -> Int
     {
      
@@ -215,7 +214,9 @@ class TestScrollView: UIView {
      centerTableView?.reloadData()
      rightTableView?.reloadData()
     }
-    
+    /**
+     重刷所有状态
+     */
     func resetStatus()
     {
         //设置状态
@@ -269,21 +270,18 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-      
+        //获取cell
         tableView.registerNib(UINib(nibName: "UIChooseAnswerTableViewCell",bundle: nil), forCellReuseIdentifier: "AnswerCell")
         let cell = tableView.dequeueReusableCellWithIdentifier("AnswerCell", forIndexPath: indexPath) as! UIChooseAnswerTableViewCell
         cell.answerStatusImage.hidden = true
         //获取数据
         model = getFitModel(tableView)
-        
         //选择题
         if Int(model.mtype!)! == 1
         {
         cell.title.text = ["A.","B.","C.","D."][indexPath.row]
-    
         //indexpath.row需要加1 因为错位了 第一位是题目
         cell.answerLabel.text = AnswerManager.shareManager().formatAnswerToString(model.mquestion!)[indexPath.row + 1] as? String
-           
         }
             //判断题
         else if Int(model.mtype!)! == 2
@@ -291,19 +289,12 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         cell.title.text = ["1.","2."][indexPath.row]
         cell.answerLabel.text = ["对","错"][indexPath.row]
         }
-
-        
         return cell
         
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        
-        
-        //WARNING 判断题没有做
-        
         //如果已经选择 不能再次选择
         if didSelected
         {
@@ -312,12 +303,12 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         
         //保存正确答案的位置
         var answerIndexpath = 0
-
+        //获取数据
         model = getFitModel(tableView)
+        //找到正确答案的位置
         if Int(model.mtype!) == 1
         {
-        
-               switch model.manswer! {
+        switch model.manswer! {
         case "A":
             answerIndexpath = 0
         case "B":
@@ -329,13 +320,12 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         default:
             print("见鬼了")
         }
-            
         }
         else
         {
             answerIndexpath = model.manswer! == "对" ? 0 : 1
         }
-        
+        //拿到选择的cell及正确答案的cell
         let chooseCell = (tableView.cellForRowAtIndexPath(indexPath) as! UIChooseAnswerTableViewCell)
         let rightCell =  tableView.visibleCells[answerIndexpath] as! UIChooseAnswerTableViewCell
         
@@ -349,24 +339,26 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         //显示图片
         chooseCell.answerStatusImage.hidden = false
         rightCell.answerStatusImage.hidden = false
+        //回答正确的操作
         if answerIndexpath == indexPath.row
         {
-         chooseCell.answerStatusImage.image = UIImage(named: "right")
+        
         //正确加一
         rightNum += 1
         rightNumInExam += 1
-            progressRightWidth += 1.94
+        progressRightWidth += 1.94
+        chooseCell.answerStatusImage.image = UIImage(named: "right")
         footBtn!.setTitle("答对！☞滑动进入下一题", forState: .Selected)
         }
+        //回答错误
         else
         {
-        //错误加一
-            wrongNum += 1
-            wrongNumInExam += 1
-            progressWrongWidth += 1.94
-         chooseCell.answerStatusImage.image = UIImage(named: "wrong")
-         rightCell.answerStatusImage.image = UIImage(named: "right")
-         footBtn!.setTitle("错了哦~ ☞滑动进入下一题", forState: .Selected)
+        wrongNum += 1
+        wrongNumInExam += 1
+        progressWrongWidth += 1.94
+        chooseCell.answerStatusImage.image = UIImage(named: "wrong")
+        rightCell.answerStatusImage.image = UIImage(named: "right")
+        footBtn!.setTitle("错了哦~ ☞滑动进入下一题", forState: .Selected)
         }
 
         
@@ -387,18 +379,24 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         model = getFitModel(tableView)
         
         var str = ""
+        //选择题
         if  Int(model.mtype!)! == 1
         {
         str = AnswerManager.shareManager().formatAnswerToString(model.mquestion!)[0] as! String
-        
         }
+        //判断题
         else
         {
          str = model.mquestion!
         }
-        
+        //视图容器
         let view = UIView(frame: CGRectMake(0, 0, self.frame.width - 8 , 100))
-        
+        //题目视图
+        let label = UILabel(frame: CGRectMake(10, 30, self.frame.width - 8 , 80))
+        label.text = String(getQuestionNum(tableView, currentPage: currentPage)) + "."  + str
+        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
+        label.numberOfLines = 0
+        label.lineBreakMode = .ByCharWrapping
         
         //进度条
         let progressLabel = UILabel(frame: CGRectMake(8, 8, self.frame.width - 16 , 20))
@@ -410,7 +408,6 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         
         //  正确的进度条 暂时设定为0.194
         let backView = UIView(frame: CGRectMake(0, 0, CGFloat(progressRightWidth) , 20))
-       
         backView.backgroundColor = bgcolor
         let pageLabel = UILabel(frame: CGRectMake(2, 0, 20 , 20))
         pageLabel.hidden = false
@@ -428,21 +425,9 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         wrongLabel.textColor = UIColor.whiteColor()
         wrongLabel.font = UIFont.systemFontOfSize(9)
         wrongLabel.text = "\(wrongNumInExam + 1)"
-        
-        
-      
         progressLabel.addSubview(progressWrongView)
           progressLabel.addSubview(wrongLabel)
         
-        
-        
-        //题目
-        let label = UILabel(frame: CGRectMake(10, 30, self.frame.width - 8 , 80))
-        label.text = String(getQuestionNum(tableView, currentPage: currentPage)) + "."  + str
-        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-   
-        label.numberOfLines = 0
-        label.lineBreakMode = .ByCharWrapping
         
         //添加视图
         view.addSubview(progressLabel)
@@ -459,62 +444,73 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
         }
        
         model = getFitModel(tableView)
-       tableFooterView = UIView(frame: CGRectMake(0, 100, self.frame.width - 10 , 200))
+        tableFooterView = UIView(frame: CGRectMake(0, 100, self.frame.width - 10 , 200))
         let footLabel = UILabel(frame: CGRectMake(10, 20, self.frame.width - 10 , 20))
         footLabel.text = "答案解析"
         footLabel.textColor = UIColor.blackColor()
         footLabel.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        let label = UILabel(frame: CGRectMake(10, 60, self.frame.width - 10 , 160))
-        label.textColor = bgcolor
-        label.backgroundColor = UIColor.whiteColor()
-        label.text = "\n" + model.mdesc!
-        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        label.numberOfLines = 0
-        label.lineBreakMode = .ByCharWrapping
+        let answerlabel = UILabel(frame: CGRectMake(10, 60, self.frame.width - 10 , 160))
+        answerlabel.textColor = bgcolor
+        answerlabel.backgroundColor = UIColor.whiteColor()
+        answerlabel.text = "\n" + model.mdesc!
+        answerlabel.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
+        answerlabel.numberOfLines = 0
+        answerlabel.lineBreakMode = .ByCharWrapping
         tableFooterView!.addSubview(footLabel)
-        tableFooterView!.addSubview(label)
+        tableFooterView!.addSubview(answerlabel)
         return tableFooterView
 
     }
     
     // MARK: TestScrollViewDelegate
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        
+        
+        
+        //当前偏移量
         let currentOffset = scrollView.contentOffset
+        //当前页
         let page = Int((currentOffset.x) / self.frame.width)
-
+        //判断是否向右划
         if currentOffset.x > lastOffset
         {
-       
-      
+        //判断是否是第二页以上
         if page < dataArray.count - 1 && page > 0
         {
-              delegate?.scrollViewDidEndDecelerating(page + 1)
+            if currentPage == 99
+            {
+                NSNotificationCenter.defaultCenter().postNotificationName(DidFinishedTest, object: nil)
+                return
+            
+            }
+            
+            /**
+             *  位移操作
+             */
+
+            delegate?.scrollViewDidEndDecelerating(page + 1)
+          
             scrollView.contentSize = CGSizeMake(currentOffset.x + self.frame.width * 2, 0)
             
             leftTableView?.frame = CGRectMake(currentOffset.x - self.frame.width , 0, self.frame.width, self.frame.height)
             centerTableView?.frame = CGRectMake(currentOffset.x , 0, self.frame.width, self.frame.height)
             rightTableView?.frame = CGRectMake(currentOffset.x + self.frame.width, 0, self.frame.width, self.frame.height)
             
+        
             //处理多加了一次page的错误
             if page != 1
             {
                 currentPage += 1
             }
-      
-            //
-            reloadData()
+            if currentPage == 0
+            {
+                currentPage = 1
+            }
             
-        }
-
-        }
-        
-        
-        
+            reloadData()
+            } }
         else
-        {
-
-        }
-    
+        {}
         //保存偏移量
         lastOffset = currentOffset.x
         
@@ -528,6 +524,7 @@ extension TestScrollView:UIScrollViewDelegate, UITableViewDelegate, UITableViewD
              resetStatus()
              reloadData()
     }
+    
     
     //让scrollview不能上下滚动
     func scrollViewDidScroll(scrollView: UIScrollView) {

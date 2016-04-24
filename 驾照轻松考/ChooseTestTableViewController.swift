@@ -83,7 +83,7 @@ class ChooseTestTableViewController: UITableViewController {
         }
     }
     
-    
+   //添加alert视图
     func addAlert()
     {
         

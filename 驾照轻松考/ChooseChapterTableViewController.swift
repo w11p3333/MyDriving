@@ -15,9 +15,12 @@ class ChooseChapterTableViewController: UITableViewController {
     var chapterType:Int?
     
     var chapterData = [AnyObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = 80
         //从数据库获取数据
       if chapterType == 1
       {
@@ -29,14 +32,7 @@ class ChooseChapterTableViewController: UITableViewController {
          chapterData = DataBaseManager.shareManager().getData(SubjectType.subChapter) as! [SubChapter]
         }
         
-       tableView.tableFooterView = UIView()
-       tableView.rowHeight = 80
-       
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
     // MARK: - Table view data source
@@ -67,6 +63,7 @@ class ChooseChapterTableViewController: UITableViewController {
             cell.chapterName.text = (chapterData as! [SubChapter])[indexPath.row].sname
             cell.chapterNum.text = (chapterData as! [SubChapter])[indexPath.row].serial
         }
+        
         cell.chapterName.numberOfLines = 0
         cell.chapterName.lineBreakMode = NSLineBreakMode.ByCharWrapping
         cell.chapterNum.backgroundColor = colors[Int(arc4random_uniform(5))]
@@ -85,8 +82,7 @@ class ChooseChapterTableViewController: UITableViewController {
         {
             
             let alert = UIAlertController(title: "上次已做到第\(currentPage + 1)题,要继续开始吗？", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-            
-            
+
             let cancelAction = UIAlertAction(title: "从头开始", style: UIAlertActionStyle.Default) { (action) in
                 
                 //将page清空
@@ -96,11 +92,7 @@ class ChooseChapterTableViewController: UITableViewController {
                 
                 
             }
-            
-            
             let okAction = UIAlertAction(title: "继续", style: UIAlertActionStyle.Default) { (action) in
-                
-                
             //currentPage从0开始的 所以加1
                 currentPage += 1
               self.pushToTestView()

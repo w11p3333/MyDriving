@@ -9,6 +9,7 @@
 
 import UIKit
 
+//答案
 class Answer: NSObject {
 
     
@@ -19,8 +20,10 @@ class Answer: NSObject {
     var mid:String?
     var manswer:String?
     var mimage:String?
+    
     var pid:String?
     var pname:String?
+    
     var sid:String?
     var sname:String?
     //题目类型 1为选择题2为判断题

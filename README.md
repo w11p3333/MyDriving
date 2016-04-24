@@ -20,6 +20,8 @@
 
 		Product>CocoaPods>installpods
 ### CHANGELOG
+#### v1.1 (Apr 24,2016)
+- 修复从头开始的答题逻辑错误
 #### v1.0 (Apr 23,2016)
 - 完成考试模块 
 - 加入图表模块	

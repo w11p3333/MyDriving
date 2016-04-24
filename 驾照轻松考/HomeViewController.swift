@@ -12,24 +12,27 @@ import SDCycleScrollView
 
 class HomeViewController: UIViewController {
 
- 
+    //小组按钮
     @IBOutlet weak var teamView: UIView!
     
+    //三个label
     @IBOutlet weak var totalNumLabel: UILabel!
     
     @IBOutlet weak var unfinishedLabel: UILabel!
     
     @IBOutlet weak var finishedLabel: UILabel!
-    
+    //按钮约束
     @IBOutlet weak var threeConstraint: NSLayoutConstraint!
     @IBOutlet weak var twoConstraint: NSLayoutConstraint!
     @IBOutlet weak var oneConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var cycleScrollView: SDCycleScrollView!
+    
     @IBOutlet weak var startBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //小组按钮
+        //小组按钮添加手势
         teamView.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.teamViewClick))
         teamView.addGestureRecognizer(tap)

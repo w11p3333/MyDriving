@@ -27,14 +27,13 @@ class DataBaseManager: NSObject {
     
     
     func getData(type:SubjectType) -> [AnyObject]
-    {
-        var array = [AnyObject]()
+    {       //数据保存到数组里
+            var array = [AnyObject]()
 
             let path =  NSBundle.mainBundle().pathForResource("data", ofType: "sqlite")
             dataBase = FMDatabase(path: path)
             if dataBase!.open()
             {
-             
             }
 
             switch type {
@@ -49,7 +48,6 @@ class DataBaseManager: NSObject {
                 array.append(model)
                
             }
-              
             case .answer:
             let sql = "select mquestion,mdesc,mid,manswer,mimage,pid,sid,sname,mtype from leaflevel"
             let result = dataBase!.executeQuery(sql, withArgumentsInArray: nil)
@@ -64,7 +62,6 @@ class DataBaseManager: NSObject {
                 model.sid = String(result!.intForColumn("sid"))
                 model.sname = result!.stringForColumn("sname")
                 model.mtype = String(result!.intForColumn("mtype"))
-             
                 array.append(model)
                 }
                 

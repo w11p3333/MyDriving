@@ -27,6 +27,7 @@ class ExamScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.title = "发表成绩"
         scoreLabel.text = String(score)
         scoreDescLabel.text = score > 90 ? "欢迎老司机的诞生。" : ":前面的老司机带带我..."

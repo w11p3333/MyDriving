@@ -12,10 +12,10 @@ class SimulationExamViewController: UIViewController {
 
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgcolor
-    //    startBtn.clipsToBounds = true
         startBtn.layer.cornerRadius = 100
         // Do any additional setup after loading the view.
     }
@@ -43,7 +43,7 @@ class SimulationExamViewController: UIViewController {
 
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewControllerWithIdentifier("MainTestVc") as! MainTestViewController
-            vc.type = 5
+            vc.type = 4
             let nav = UINavigationController(rootViewController: vc)
             self.navigationController?.presentViewController(nav, animated: true, completion: nil)
         

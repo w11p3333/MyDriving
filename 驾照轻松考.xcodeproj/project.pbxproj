@@ -221,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				B2D43F651CC4DB40003519EC /* VideoViewController.swift */,
-				B252C0A81CCA1B1E00CBBB68 /* VideoCollectionViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -229,6 +228,7 @@
 		B24B8F7D1CCB65AC0082E944 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B252C0A81CCA1B1E00CBBB68 /* VideoCollectionViewCell.swift */,
 				B252C0AA1CCA259100CBBB68 /* CollectionHeaderView.swift */,
 			);
 			name = View;
@@ -394,18 +394,18 @@
 		B2E41F511CC29A4F006C541F /* 驾照轻松考 */ = {
 			isa = PBXGroup;
 			children = (
-				B24B8F771CCB501E0082E944 /* Team-小组模块 */,
 				B2D43F1F1CC3CD5F003519EC /* Test-主答题模块 */,
 				B2D43F631CC4DB15003519EC /* MyCharts-统计模块 */,
-				B2D43F621CC4DB0D003519EC /* BookTips-拿本模块 */,
 				B2D43F611CC4DAFE003519EC /* Video-视频模块 */,
+				B2D43F621CC4DB0D003519EC /* BookTips-拿本模块 */,
+				B24B8F771CCB501E0082E944 /* Team-小组模块 */,
 				B2D43F271CC3CDBB003519EC /* Main */,
 				B2D43F261CC3CDB6003519EC /* Tools */,
 				B2D43F231CC3CD9A003519EC /* Resource */,
 				B2E41F521CC29A4F006C541F /* AppDelegate.swift */,
 				B2E41F561CC29A4F006C541F /* Main.storyboard */,
-				B2E41F591CC29A4F006C541F /* Assets.xcassets */,
 				B2E41F5B1CC29A4F006C541F /* LaunchScreen.storyboard */,
+				B2E41F591CC29A4F006C541F /* Assets.xcassets */,
 				B2E41F5E1CC29A4F006C541F /* Info.plist */,
 			);
 			path = "驾照轻松考";
